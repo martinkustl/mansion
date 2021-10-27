@@ -1,4 +1,6 @@
-# Spuštění aplikace
+# Aplikace zámeček
+
+## Spuštění dev prostředí
 
 Níže je uveden příkaz ke spuštění aplikace. --host a --port určují, na jaké doméně a portu aplikace poběží
 
