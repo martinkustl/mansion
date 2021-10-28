@@ -3,3 +3,9 @@
 @section('title')
 Domovská stránka
 @endsection
+
+@section('content')
+
+
+
+@endsection
