@@ -22,8 +22,8 @@ class CreateStaticFileTable extends Migration
             $table->integer('height')->nullable();
             $table->integer('width')->nullable();
             $table->integer('size')->nullable();
-            $table->foreignId('facility_id')->constrained('facility');
-            $table->foreignId('event_id')->constrained('event');
+            $table->foreignId('facility_id')->nullable()->constrained('facility');
+            $table->foreignId('event_id')->nullable()->constrained('event');
         });
     }
 
