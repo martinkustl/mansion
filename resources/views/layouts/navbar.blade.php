@@ -9,9 +9,11 @@
                 </h1>
             </a>
             <button class="burger-bar" onclick="toggleNavbar()" aria-label="otevřít menu">
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                {{-- <i class="fa fa-bars" aria-hidden="true"></i>
                 <i class="fa fa-times close" aria-hidden="true"></i>
-                x
+                x --}}
+                <i class="bi bi-list"></i>
+                <i class="bi bi-x-lg close-burger"></i>
             </button>
         </div>
         <ul class="main-nav__items">
