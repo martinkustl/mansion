@@ -3,7 +3,6 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use PhpParser\Node\Scalar\String_;
 
 class Card extends Component
 {
@@ -36,13 +35,3 @@ class Card extends Component
         return view('components.card');
     }
 }
-
-
-//  public $type;
-// public $message;
-
-// public function __construct($type, $message)
-// {
-//     $this->type = $type;
-//     $this->message = $message;
-// }
