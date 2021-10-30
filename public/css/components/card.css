@@ -1,0 +1,55 @@
+.c-card {
+    background-color: var(--color-tertiary);
+    overflow: hidden;
+    border-radius: var(--radius-bigger);
+    transition: background-color 0.3s;
+}
+
+.c-card:hover {
+    background-color: var(--color-primary);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.c-card:hover .c-card-title {
+    color: var(--color-secondary);
+}
+
+.c-card:hover p {
+    color: var(--color-light);
+}
+
+.c-card-title {
+    color: var(--color-primary);
+    font-size: var(--font-size-big);
+}
+
+.c-card:hover .c-card-date {
+    color: #b4aaaa !important;
+}
+
+.c-card-text--wrapper {
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+    .c-card {
+        max-height: 230px;
+    }
+
+    .c-card-text--wrapper {
+        max-height: initial;
+    }
+
+    .c-card-image {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

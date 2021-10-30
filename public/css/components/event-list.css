@@ -1,0 +1,8 @@
+.event-list {
+    padding: 0;
+}
+
+.event-list__link {
+    text-decoration: none;
+    color: var(--color-dark);
+}

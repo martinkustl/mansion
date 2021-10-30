@@ -16,12 +16,4 @@ class EventType extends Model
     public $timestamps = false;
 
     protected $table = 'event_type';
-
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-
-    protected $primaryKey = 'type';
 }
