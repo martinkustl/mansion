@@ -6,10 +6,11 @@ Domovská stránka
 
 @section('content')
 
-{{-- Vykreslení eventů --}}
-@foreach ($events as $event)
-    <x-card :title="$event->title" :description="$event->description" :date="date('d.m.Y H:i', strtotime($event->date))" />
-@endforeach
+@section('pageHeading')
+Co se u nás dělo
+@endsection
 
+{{-- Vykreslení eventů --}}
+<x-event-list :events="$events"/>
 
 @endsection

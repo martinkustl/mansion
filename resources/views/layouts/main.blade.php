@@ -12,13 +12,14 @@
     <link href="/css/layout/main.css" rel="stylesheet" />
     <link href="/css/layout/navbar.css" rel="stylesheet" />
     <link href="/css/components/card.css" rel="stylesheet" />
-
+    <link href="/css/components/event-list.css" rel="stylesheet" />
 </head>
 
 <body>
     @include('layouts.navbar')
     <div id="content-container">
         <main>
+            <h2 class="page-heading">@yield('pageHeading')</h2>
             @yield('content')
         </main>
         @include('layouts.footer')
