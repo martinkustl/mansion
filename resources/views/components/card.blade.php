@@ -1,7 +1,7 @@
-<div class="card mb-3 c-card">
+<li class="card mb-3 c-card">
     <div class="row g-0">
         <div class="col-md-4">
-            <img c-card-image src="/images/events/event-1.jpg" class="img-fluid rounded-start c-card-image" alt="...">
+            <img c-card-image src="/images/events/{{$path}}" class="img-fluid rounded-start c-card-image" alt="...">
         </div>
         <article class="col-md-8">
             <div class="card-body">
@@ -13,4 +13,4 @@
             </div>
         </article>
     </div>
-</div>
+</li>
