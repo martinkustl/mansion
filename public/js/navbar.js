@@ -7,21 +7,7 @@ function toggleNavbar() {
     dropdown.classList.toggle("open");
     barIcon.classList.toggle("close-burger");
     closeIcon.classList.toggle("close-burger");
-
     burger.classList.toggle("open-burger");
-
-    // dropdown = document.querySelector('.main-nav__items');
-    // barIcon = document.querySelector('.fa-bars');
-    // closeIcon = document.querySelector('.fa-times');
-    // dropdown.classList.toggle('open');
-    // barIcon.classList.toggle('close');
-    // closeIcon.classList.toggle('close');
-
-    // {{-- <i class="fa fa-bars" aria-hidden="true"></i>
-    // <i class="fa fa-times close" aria-hidden="true"></i>
-    // x --}}
-    // <i class="bi bi-list"></i>
-    // <i class="bi bi-x-lg"></i>
 }
 
 // Resize event, který je nutné spustit kvůli mizejícímu logu v navbaru
