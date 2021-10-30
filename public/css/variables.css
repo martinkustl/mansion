@@ -42,4 +42,15 @@
     --color-light-tint: #ffffff;
 
     --breakpoint-mobile: 768px;
+
+    --font-size-normal: 1rem;
+    --font-size-huge: 2rem;
+    --font-size-big: 1.5rem;
+    --font-size-medium: 1.25rem;
+    --font-size-normal: 1rem;
+    --font-size-tiny: 0.7rem;
+
+    --radius-smaller: 5px;
+    --radius-normal: 10px;
+    --radius-bigger: 15px;
 }

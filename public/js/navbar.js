@@ -4,7 +4,6 @@ function toggleNavbar() {
     const barIcon = document.querySelector(".fa-bars");
     const closeIcon = document.querySelector(".fa-times");
     const burger = document.querySelector(".burger-bar");
-    console.log(burger);
     dropdown.classList.toggle("open");
     // barIcon.classList.toggle("close");
     // closeIcon.classList.toggle("close");

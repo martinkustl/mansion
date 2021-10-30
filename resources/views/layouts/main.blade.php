@@ -10,6 +10,8 @@
     <link href="/css/variables.css" rel="stylesheet" />
     <link href="/css/layout/main.css" rel="stylesheet" />
     <link href="/css/layout/navbar.css" rel="stylesheet" />
+    <link href="/css/components/card.css" rel="stylesheet" />
+
 </head>
 
 <body>

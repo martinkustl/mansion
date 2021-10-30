@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 .main-nav {
@@ -82,7 +83,7 @@
 }
 
 .open {
-    max-height: 280px;
+    max-height: 350px;
     background-color: var(--color-secondary);
     -webkit-box-shadow: 0 5px 5px var(--color-secondary);
     -moz-box-shadow: 0 5px 5px var(--color-secondary);
@@ -201,6 +202,10 @@
         background-color: var(--color-primary);
         transform-origin: top right;
         transition: transform 0.25s ease-out;
+    }
+
+    .main-nav__link:hover {
+        color: var(--color-dark);
     }
 
     .main-nav__link:hover:after {
