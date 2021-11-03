@@ -1,16 +1,16 @@
 @extends ('layouts.page')
 
 @section('title')
-Domovská stránka
+Akce
 @endsection
 
 @section('content')
 
 @section('pageHeading')
-Co se u nás dělo
+Nadcházející akce
 @endsection
 
 {{-- Vykreslení eventů --}}
-<x-event-list :events="$events" basePath="home"/>
+<x-event-list :events="$events" basePath="events"/>
 
 @endsection
