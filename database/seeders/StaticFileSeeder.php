@@ -13,19 +13,6 @@ class StaticFileSeeder extends Seeder
      * @return void
      */
 
-    /**
-     * id
-     * mime_type
-     * extension
-     * folder_name
-     * name
-     * height
-     * width
-     * size
-     * facility_id
-     * event_id
-     */
-
     public function run()
     {
         $staticFiles = [

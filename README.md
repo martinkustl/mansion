@@ -32,6 +32,9 @@ Proč je to dobrý? - Je zkrátka fajn mít všechny tyto definice SQL tabulek j
 <li>Samotné SQL schéma aplikace je takto přímo spojené s aplikací, takže to, že si nechtěně smažeme schéma v DBčku, je úplně jedno. Prostě si pustíme migraci znovu a zas máme vše zpátky.</li>
 <ol>
 
+<br/>
+<br/>
+
 ### Složka seeders
 
 Další podstatná složka. <br />
