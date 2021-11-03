@@ -7,7 +7,9 @@ Detail události
 @section('content')
 <article class="event-detail--wrapper">
 <h2 class="event-detail--title">{{$event->title}}</h2>
-<h3 class="event-detail--date">{{$event->date}}</h3>
+<h3 class="event-detail--date">
+    {{date('d.m.Y H:i', strtotime($event->date))}}
+</h3>
 <h3 class="event-detail--price">{{$event->entrance_fee}} Kč</h3>
 
 <img src="/images/events/{{$event->static_file_id.$event->extension}}" class="event-detail--image" alt="{{$event->name}}">
