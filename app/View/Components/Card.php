@@ -10,6 +10,7 @@ class Card extends Component
     public $description;
     public $date;
     public $path;
+    public $name;
 
     /**
      * Create a new component instance.
@@ -18,15 +19,17 @@ class Card extends Component
      * @param  string  $description
      * @param  string  $date
      * @param  string  $path
+     * @param  string  $name
      * 
      * @return void
      */
-    public function __construct(string $title, string $description, string $date, string $path)
+    public function __construct(string $title, string $description, string $date, string $path, string $name)
     {
         $this->title = $title;
         $this->description = $description;
         $this->date = $date;
         $this->path = $path;
+        $this->name = $name;
     }
 
     /**

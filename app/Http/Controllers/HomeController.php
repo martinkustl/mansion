@@ -15,7 +15,7 @@ class HomeController extends Controller
         $events = DB::table('event')
             ->join('static_file', 'event.id', '=', 'static_file.event_id')
             ->where('date', '<', Carbon::now())
-            ->select('event.*', 'static_file.id as static_file_id', 'static_file.extension')
+            ->select('event.*', 'static_file.id as static_file_id', 'static_file.extension', 'static_file.name')
             ->get();
 
         return view('home.home', ['events' => $events]);
