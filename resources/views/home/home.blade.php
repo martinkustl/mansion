@@ -11,6 +11,6 @@ Co se u nás dělo
 @endsection
 
 {{-- Vykreslení eventů --}}
-<x-event-list :events="$events"/>
+<x-event-list :events="$events" basePath="home"/>
 
 @endsection

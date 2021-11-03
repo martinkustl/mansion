@@ -11,6 +11,6 @@ Nadcházející akce
 @endsection
 
 {{-- Vykreslení eventů --}}
-<x-event-list :events="$events"/>
+<x-event-list :events="$events" basePath="events"/>
 
 @endsection

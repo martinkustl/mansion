@@ -8,15 +8,18 @@ class EventList extends Component
 {
 
     public $events;
+    public $basePath;
     /**
      * Create a new component instance.
      *  
      * @param object $events
+     * @param string $basePath
      * @return void
      */
-    public function __construct(object $events)
+    public function __construct(object $events, string $basePath)
     {
         $this->events = $events;
+        $this->basePath = $basePath;
     }
 
     /**
