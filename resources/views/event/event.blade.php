@@ -8,7 +8,7 @@ Detail události
 <article class="event-detail--wrapper">
 <h2 class="event-detail--title">{{$event->title}}</h2>
 <h3 class="event-detail--date">
-    {{date('d.m.Y H:i', strtotime($event->date))}}
+    {{format_datetime($event->date)}}
 </h3>
 <h3 class="event-detail--price">{{$event->entrance_fee}} Kč</h3>
 
