@@ -18,19 +18,19 @@
         </div>
         <ul class="main-nav__items">
             <li class="main-nav__item">
-                <a class="main-nav__link main-nav__link--active" href="/">Domů</a>
+                <a class="main-nav__link {{(request()->is('home*') ? 'main-nav__link--active' : '')}}" href="/">Domů</a>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link" href="events">Akce</a>
+                <a class="main-nav__link {{(request()->is('events*') ? 'main-nav__link--active' : '')}}" href="/events">Akce</a>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link" href="facilities">Zařízení</a>
+                <a class="main-nav__link {{(request()->is('facilities*') ? 'main-nav__link--active' : '')}}" href="/facilities">Zařízení</a>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link" href="about">Recenze</a>
+                <a class="main-nav__link {{(request()->is('about*') ? 'main-nav__link--active' : '')}}" href="/about">Recenze</a>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link" href="contact">Kontakt</a>
+                <a class="main-nav__link {{(request()->is('contact*') ? 'main-nav__link--active' : '')}}" href="/contact">Kontakt</a>
             </li>
         </ul>
     </nav>

@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 Route::get('/events', [UpcomingEventsController::class, 'index']);
 
+Route::get("/", function () {
+    return redirect("/home");
+});
+
 // Detail eventu
-Route::get('/{id}', [EventController::class, 'index']);
+Route::get('/home/{id}', [EventController::class, 'index']);
+Route::get('/events/{id}', [EventController::class, 'index']);
