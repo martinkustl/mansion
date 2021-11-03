@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    /* font-family: "Montserrat", sans-serif; */
     display: grid;
     /* grid-template-rows: fit-content(30rem) auto; */
     height: 100%;
@@ -54,10 +54,41 @@ main {
 
 @media only screen and (min-width: 768px) {
     .page-heading {
-        display: none;
+        background-color: transparent;
     }
 
     #content-container {
         margin-top: 263px;
     }
+}
+
+.event-detail--image {
+    border-radius: var(--radius-normal);
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+}
+
+.event-detail--wrapper {
+    display: grid;
+    grid-row-gap: 1rem;
+    justify-items: center;
+    padding: 1rem;
+}
+
+.event-detail--title {
+    font-size: var(--font-size-big);
+    margin-bottom: 0;
+}
+
+.event-detail--wrapper > h3,
+h4 {
+    margin-bottom: 0;
+    font-size: var(--font-size-medium);
+    color: var(--color-medium);
+    font-weight: normal;
+}
+
+.event-detail--wrapper p {
+    text-align: justify;
 }

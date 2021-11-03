@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
+class EventController extends Controller
 {
-    //
-    public function index()
+    public function index(Request $request)
     {
-        // Získá akce, které již proběhly
-        $events = DB::table('event')
+        $event = DB::table('event')
             ->join('static_file', 'event.id', '=', 'static_file.event_id')
-            ->where('date', '<', Carbon::now())
+            ->where('event.id', '=', $request->id)
             ->select('event.*', 'static_file.id as static_file_id', 'static_file.extension', 'static_file.name')
-            ->get();
+            ->first();
 
-        return view('home.home', ['events' => $events]);
+        return view("event.event", ['event' => $event]);
     }
 }

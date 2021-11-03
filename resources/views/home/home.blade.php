@@ -1,4 +1,4 @@
-@extends ('layouts.main')
+@extends ('layouts.page')
 
 @section('title')
 Domovská stránka
