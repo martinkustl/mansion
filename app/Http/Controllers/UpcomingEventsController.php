@@ -14,7 +14,7 @@ class UpcomingEventsController extends Controller
         $events = DB::table('event')
             ->join('static_file', 'event.id', '=', 'static_file.event_id')
             ->where('date', '>=', Carbon::now())
-            ->select('event.*', 'static_file.id as static_file_id', 'static_file.extension', 'static_file.name')
+            ->select('event.*', 'static_file.id as staticFileId', 'static_file.extension', 'static_file.name as imgName', 'static_file.folder_name as folderName')
             ->get();
 
         return view('upcoming_events.upcoming_events', ['events' => $events]);

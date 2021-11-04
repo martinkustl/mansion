@@ -6,7 +6,7 @@ Detail události
 
 @section('content')
 <article class="event-detail--wrapper">
-<h2 class="event-detail--title">{{$event->title}}</h2>
+<h2 class="detail-page--title">{{$event->title}}</h2>
 <h3 class="event-detail--date">
     {{format_datetime($event->date)}}
 </h3>

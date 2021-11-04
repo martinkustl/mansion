@@ -76,7 +76,7 @@ main {
     padding: 1rem;
 }
 
-.event-detail--title {
+.detail-page--title {
     font-size: var(--font-size-big);
     margin-bottom: 0;
 }
@@ -91,4 +91,32 @@ h4 {
 
 .event-detail--wrapper p {
     text-align: justify;
+}
+
+.c-carousel-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.carousel-inner {
+    height: 35vh;
+    width: 100%;
+    max-height: 600px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.carousel-item {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
