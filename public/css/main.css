@@ -113,7 +113,6 @@ h4 {
 .carousel-item {
     height: 100%;
     width: 100%;
-    cursor: pointer;
 }
 
 .carousel-item img {
