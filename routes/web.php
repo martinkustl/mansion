@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FacilitiesController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UpcomingEventsController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::get('/facilities', [FacilitiesController::class, 'index']);
 // Detail eventu
 Route::get('/home/{id}', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'index']);
+Route::get('/facilities/{id}', [FacilityController::class, 'index']);
 
 
 Route::get("/", function () {
