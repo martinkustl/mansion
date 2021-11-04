@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Card extends Component
+class EventCard extends Component
 {
     public $title;
     public $description;
@@ -39,6 +39,6 @@ class Card extends Component
      */
     public function render()
     {
-        return view('components.card');
+        return view('components.event-card');
     }
 }
