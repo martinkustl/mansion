@@ -12,7 +12,7 @@ function toggleNavbar() {
 
 // Resize event, který je nutné spustit kvůli mizejícímu logu v navbaru
 let resizeTimer;
-window.addEventListener("resize", () => {
+window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
         const navbar = document.getElementById("app-logo-wrapper");
@@ -25,7 +25,6 @@ window.addEventListener("resize", () => {
 
 // Tento kus kódu schovává logo v navbaru na desktopu
 // Řeší to case, kdy někdo na počítači mění velikost zařízení a testuje responsivitu...
-window.addEventListener("scroll", scrollFunction);
 function scrollFunction() {
     const navbar = document.getElementById("app-logo-wrapper");
     const deviceWidth = window.innerWidth;
@@ -41,3 +40,6 @@ function scrollFunction() {
 
     navbar.classList.remove("main-nav__logo--hide");
 }
+
+window.addEventListener("scroll", scrollFunction);
+
