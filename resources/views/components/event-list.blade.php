@@ -10,4 +10,11 @@
             </a>
         </li>
     @endforeach
+    @if(count($events) === 0)
+        <p class="text-center mt-4 p-4 c-no-events">
+            <strong>
+                Žádné akce k zobrazení
+            </strong>
+        </p>
+    @endif
 </ul>
