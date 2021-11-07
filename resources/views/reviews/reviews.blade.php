@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
             <button type="submit"
-                    class="btn btn-primary c-review-form--submit float-md-end text-capitalize">odeslat
+                    class="btn btn-primary c-btn-primary float-md-end text-capitalize c-review-form--submit">odeslat
             </button>
         </div>
     </div>

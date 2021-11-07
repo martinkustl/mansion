@@ -53,6 +53,8 @@ main {
     margin-bottom: 1rem;
 }
 
+/* EVENT DETAIL*/
+
 .event-detail--image {
     border-radius: var(--radius-normal);
     width: 100%;
@@ -84,6 +86,8 @@ h4 {
     text-align: justify;
 }
 
+/* ZAŘÍZENÍ */
+
 .c-carousel-img {
     height: 100%;
     object-fit: cover;
@@ -112,6 +116,8 @@ h4 {
     object-fit: cover;
 }
 
+/* RECENZE */
+
 .c-review-form {
     margin-top: 1rem;
     background-color: var(--color-tertiary);
@@ -131,19 +137,6 @@ h4 {
 .c-review-form--label {
     padding-left: 1rem;
     min-width: 70px;
-}
-
-.c-review-form--submit {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    border-radius: var(--radius-normal);
-    width: 100%;
-    font-weight: bold;
-}
-
-.c-review-form--submit:hover {
-    background-color: var(--color-primary-shade);
-    border-color: var(--color-primary-shade);
 }
 
 .rating {
@@ -200,6 +193,8 @@ h4 {
     margin-top: 1rem;
 }
 
+/* KONTAKTY*/
+
 .c-contacts-card {
     background-color: var(--color-tertiary);
     border-radius: var(--radius-normal);
@@ -220,6 +215,68 @@ h4 {
     color: var(--color-primary);
 }
 
+/* NADCHÁZEJÍCÍ AKCE    */
+
+.c-radios-wrapper > * {
+    margin-left: 1rem;
+}
+
+.c-radios-wrapper > *:first-child {
+    margin-left: 0;
+}
+
+.c-radio-button {
+    box-shadow: none !important;
+}
+
+.c-radio-button:focus {
+    border-color: var(--color-primary);
+}
+
+.c-radio-button:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: none !important;
+}
+
+.c-type-fieldset--heading {
+    color: var(--color-dark);
+}
+
+
+/* GLOBAL */
+.modal-content {
+    border-radius: var(--radius-normal);
+}
+
+
+.btn {
+    border-radius: var(--radius-normal);
+    font-weight: bold;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.c-btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: var(--radius-normal);
+    font-weight: bold;
+    max-width: 250px;
+}
+
+.c-btn-primary:hover {
+    background-color: var(--color-primary-shade);
+    border-color: var(--color-primary-shade);
+}
+
+.c-btn-primary:focus {
+    background-color: var(--color-primary-shade);
+    border-color: var(--color-primary-shade);
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;
@@ -234,9 +291,15 @@ h4 {
     }
 
     .c-review-form--submit {
-        background-color: var(--color-primary);
-        border-color: var(--color-primary);
-        border-radius: var(--radius-normal);
         width: 150px;
+    }
+
+    .c-btn-filter * {
+        font-size: 1.2rem;
+    }
+
+    .c-filter-icon {
+        font-size: 1.4rem;
+        /*font-size: 1.4rem;*/
     }
 }
