@@ -200,6 +200,26 @@ h4 {
     margin-top: 1rem;
 }
 
+.c-contacts-card {
+    background-color: var(--color-tertiary);
+    border-radius: var(--radius-normal);
+}
+
+.c-contacts-map {
+    overflow: hidden;
+    border-bottom-left-radius: var(--radius-normal);
+    border-bottom-right-radius: var(--radius-normal);
+    height: 400px
+}
+
+.c-contacts-link {
+    color: var(--color-primary);
+}
+
+.c-contacts-link:hover {
+    color: var(--color-primary);
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;
