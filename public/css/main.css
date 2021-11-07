@@ -138,38 +138,13 @@ h4 {
     border-color: var(--color-primary);
     border-radius: var(--radius-normal);
     width: 100%;
+    font-weight: bold;
 }
 
 .c-review-form--submit:hover {
     background-color: var(--color-primary-shade);
     border-color: var(--color-primary-shade);
 }
-
-/*.rating {*/
-/*    unicode-bidi: bidi-override;*/
-/*    direction: rtl;*/
-/*    display: inline-block;*/
-/*}*/
-
-/*.rating > span {*/
-/*    display: inline-block;*/
-/*    position: relative;*/
-/*    width: 1.1em;*/
-/*    font-size: 1.5rem;*/
-/*}*/
-
-/*.rating > span:hover:before,*/
-/*.rating > span:hover ~ span:before {*/
-/*    content: "\2605";*/
-/*    position: absolute;*/
-/*    color: var(--color-primary);*/
-/*}*/
-
-/*.rating-filled:before {*/
-/*    content: "\2605";*/
-/*    position: absolute;*/
-/*    color: var(--color-primary);*/
-/*}*/
 
 .rating {
     unicode-bidi: bidi-override;
@@ -207,6 +182,22 @@ h4 {
     background: var(--color-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.c-review-hr {
+    border: 1px solid var(--color-primary);
+    opacity: 1;
+    margin: 3rem auto;
+    width: 50%;
+}
+
+.c-review-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.c-review-list > li {
+    margin-top: 1rem;
 }
 
 @media only screen and (min-width: 768px) {

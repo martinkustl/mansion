@@ -8,14 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class ReviewsController extends Controller
 {
-    //
-
     public function index()
     {
         $reviews = DB::table('review')
-            ->orderBy('created_at')
+            ->select('review.name', 'review.review', 'review.rating', 'review.created_at as createdAt')
+            ->orderBy('createdAt', 'desc')
             ->get();
-
+        
         return view('reviews.reviews', ['reviews' => $reviews]);
     }
 
@@ -27,9 +26,6 @@ class ReviewsController extends Controller
             'rating' => 'required | numeric'
         ]);
 
-        dump($validatedInputs);
-
-
         $review = new Review;
         $review->name = $validatedInputs['name'];
         $review->review = $validatedInputs['review'];
@@ -37,6 +33,6 @@ class ReviewsController extends Controller
 
         $review->save();
 
-        return view('reviews.reviews');
+        return redirect("/reviews");
     }
 }

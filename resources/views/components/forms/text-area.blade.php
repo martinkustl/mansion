@@ -3,7 +3,7 @@
     <label for={{$inputId}} rows="5" class="col-sm-1 col-form-label c-review-form--label">{{$labelText}}</label>
     <div class="col-sm-11">
         <textarea class="form-control" id={{$inputId}} name={{$inputName}} rows="5"
-                  placeholder={{$placeholder}} required></textarea>
+                  placeholder={{$placeholder}}></textarea>
     </div>
 </div>
 @error($inputName)

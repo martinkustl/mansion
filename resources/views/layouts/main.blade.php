@@ -18,6 +18,7 @@
     <link href="/css/main.css" rel="stylesheet"/>
     <link href="/css/layout/navbar.css" rel="stylesheet"/>
     <link href="/css/components/card.css" rel="stylesheet"/>
+    <link href="/css/components/review.css" rel="stylesheet"/>
     <link href="/css/components/event-list.css" rel="stylesheet"/>
 
 </head>

@@ -1,7 +1,7 @@
 .c-card {
     background-color: var(--color-tertiary);
     overflow: hidden;
-    border-radius: var(--radius-bigger);
+    border-radius: var(--radius-normal);
     transition: background-color 0.3s;
 }
 
