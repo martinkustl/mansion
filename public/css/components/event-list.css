@@ -1,5 +1,6 @@
-.event-list {
+.items-list {
     padding: 0;
+    list-style: none;
 }
 
 .event-list__link {

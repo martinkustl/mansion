@@ -26,35 +26,35 @@
                 <a
                     class="main-nav__link {{(request()->is('home*') ? 'main-nav__link--active' : '')}}"
                     href="/"
-                    >Domů</a
+                >Domů</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('events*') ? 'main-nav__link--active' : '')}}"
                     href="/events"
-                    >Akce</a
+                >Akce</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('facilities*') ? 'main-nav__link--active' : '')}}"
                     href="/facilities"
-                    >Zařízení</a
+                >Zařízení</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('reviews*') ? 'main-nav__link--active' : '')}}"
                     href="/reviews"
-                    >Recenze</a
+                >Recenze</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
-                    class="main-nav__link {{(request()->is('contact*') ? 'main-nav__link--active' : '')}}"
-                    href="/contact"
-                    >Kontakt</a
+                    class="main-nav__link {{(request()->is('contacts*') ? 'main-nav__link--active' : '')}}"
+                    href="/contacts"
+                >Kontakty</a
                 >
             </li>
         </ul>

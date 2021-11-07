@@ -1,4 +1,4 @@
-<li class="card mb-3 c-card">
+<article class="card mb-3 c-card">
     <div class="row g-0">
         <div class="col-md-4">
             <img
@@ -14,4 +14,4 @@
             </div>
         </article>
     </div>
-</li>
+</article>
