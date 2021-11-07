@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
 }
 
 html {
@@ -21,7 +22,7 @@ body {
     /* height: 100%; */
     display: grid;
     grid-template-rows: auto 2rem;
-    background-color: var(--color--light);
+    background-color: var(--color-light);
     margin-top: 95px;
 }
 
@@ -50,16 +51,6 @@ main {
     border-radius: var(--radius-normal);
     text-align: center;
     margin-bottom: 1rem;
-}
-
-@media only screen and (min-width: 768px) {
-    .page-heading {
-        background-color: transparent;
-    }
-
-    #content-container {
-        margin-top: 263px;
-    }
 }
 
 .event-detail--image {
@@ -119,4 +110,113 @@ h4 {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.c-review-form {
+    margin-top: 1rem;
+    background-color: var(--color-tertiary);
+    /* padding: 1rem; */
+    border-radius: var(--radius-normal);
+}
+
+.c-review-form > div {
+    margin-top: 1rem;
+}
+
+.c-review-form--heading {
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+}
+
+.c-review-form--label {
+    padding-left: 1rem;
+    min-width: 70px;
+}
+
+.c-review-form--submit {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: var(--radius-normal);
+    width: 100%;
+    font-weight: bold;
+}
+
+.c-review-form--submit:hover {
+    background-color: var(--color-primary-shade);
+    border-color: var(--color-primary-shade);
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    display: inline-block;
+    /*width: 8em;*/
+}
+
+.rating input {
+    position: absolute;
+    left: -999999px;
+}
+
+.rating label {
+    display: inline-block;
+    font-size: 0;
+}
+
+.rating > label:before {
+    position: relative;
+    font-size: 2rem;
+    display: block;
+    content: "\2605";
+    color: #ccc;
+    background: -webkit-linear-gradient(-45deg, #d9d9d9 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > label.selected:before,
+.rating > label.selected ~ label:before {
+    color: #f0ad4e;
+    background: var(--color-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.c-review-hr {
+    border: 1px solid var(--color-primary);
+    opacity: 1;
+    margin: 3rem auto;
+    width: 50%;
+}
+
+.c-review-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.c-review-list > li {
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .page-heading {
+        background-color: transparent;
+    }
+
+    #content-container {
+        margin-top: 263px;
+    }
+
+    .c-review-form--label {
+        padding-left: 0.75rem;
+    }
+
+    .c-review-form--submit {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+        border-radius: var(--radius-normal);
+        width: 150px;
+    }
 }

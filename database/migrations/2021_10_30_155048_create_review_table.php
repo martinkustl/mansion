@@ -18,6 +18,7 @@ class CreateReviewTable extends Migration
             $table->timestamps(); // created_at + updated_at
             $table->string('name', 100);
             $table->text('review');
+            $table->integer('rating');
             $table->text('answer')->nullable();
             $table->timestamp('answered_at')->nullable(); // timestamp = date + time
         });

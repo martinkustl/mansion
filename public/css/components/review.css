@@ -1,0 +1,60 @@
+.c-review-card {
+    overflow: hidden;
+    border-radius: var(--radius-normal);
+}
+
+.c-review-heading {
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+
+}
+
+.c-review-date {
+    font-size: var(--font-size-normal);
+    font-weight: normal;
+    color: var(--color-dark);
+}
+
+
+.rating-view {
+    unicode-bidi: bidi-override;
+}
+
+.rating-view > span {
+    position: relative;
+    font-size: var(--font-size-normal);
+    display: inline-block;
+    content: "\2605";
+    color: #ccc;
+    background: -webkit-linear-gradient(-45deg, #d9d9d9 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating-view > .filled-star:before {
+    content: "\2605";
+    position: absolute;
+    color: var(--color-primary);
+    background: var(--color-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.c-review-header {
+    background-color: var(--color-tertiary);
+}
+
+.c-review-body {
+    padding-left: 3rem;
+    background-color: var(--color-tertiary);
+}
+
+@media only screen and (min-width: 768px) {
+    .rating-view > span {
+        font-size: var(--font-size-medium);
+    }
+
+    .c-review-date {
+        font-size: var(--font-size-medium);
+    }
+}
