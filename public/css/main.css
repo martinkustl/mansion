@@ -292,6 +292,25 @@ h4 {
     color: var(--color-light) !important;
 }
 
+.events--link {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    width: 100px;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 0.3rem;
+    border-top-left-radius: var(--radius-normal);
+    border-bottom-left-radius: var(--radius-normal);
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.events--link:hover {
+    color: var(--color-light);
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;
@@ -316,5 +335,10 @@ h4 {
     .c-filter-icon {
         font-size: 1.4rem;
         /*font-size: 1.4rem;*/
+    }
+
+    .events--link {
+        width: 130px;
+        font-size: 1rem;
     }
 }
