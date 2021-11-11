@@ -16,6 +16,8 @@ class HomeController extends Controller
             ->join('static_file', 'event.id', '=', 'static_file.event_id')
             ->where('date', '<', Carbon::now())
             ->select('event.*', 'static_file.id as staticFileId', 'static_file.extension', 'static_file.name as imgName', 'static_file.folder_name as folderName')
+            ->orderBy('event.date', 'desc')
+            ->limit(5)
             ->get();
 
         return view('home.home', ['events' => $events]);
