@@ -64,5 +64,7 @@
 
 {{-- Vykreslení eventů --}}
 <x-event-list :events="$events" basePath="events"/>
-
+<div style="height: 3rem">
+    {{ $events->links("") }}
+</div>
 @endsection

@@ -277,6 +277,21 @@ h4 {
     border-color: var(--color-primary-shade);
 }
 
+.pagination li * {
+    color: var(--color-primary) !important;
+}
+
+.pagination *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.pagination > .active span {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;;
+    color: var(--color-light) !important;
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;

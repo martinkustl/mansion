@@ -36,7 +36,7 @@ class UpcomingEventsController extends Controller
             ->select('type', 'name_cs as name')
             ->get();
         
-        return view('upcoming_events.upcoming_events', ['events' => $events->get(),
+        return view('upcoming_events.upcoming_events', ['events' => $events->paginate(2)->withQueryString(),
             'eventTypes' => $eventTypes, 'selectedEventType' => $request->query('eventType')]);
     }
 }
