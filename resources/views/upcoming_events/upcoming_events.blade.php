@@ -27,6 +27,7 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered">
         <form class="modal-content" method="GET" action="/events">
+            @csrf
             <header class="modal-header d-flex justify-content-center">
                 <h3 class="modal-title text-center" id="exampleModalLabel">Filtr dle typu akce</h3>
             </header>
