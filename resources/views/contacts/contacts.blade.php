@@ -31,6 +31,7 @@
                 </div>
             </div>
         </li>
+        <hr class="c-review-hr"/>
         <li class="card mb-3 c-contacts-card">
             <div class="row g-0 p-2">
                 <div class="col-2 col-md-1 d-flex justify-content-center align-items-center">
@@ -47,7 +48,7 @@
                 </div>
             </div>
         </li>
-
+        <hr class="c-review-hr"/>
     </ul>
     <div class="c-contacts-map" id="map"></div>
 </address>
