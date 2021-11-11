@@ -29,13 +29,14 @@ class UpcomingEventsController extends Controller
         }
 
         $events
+            ->orderBy('date')
             ->select('event.*', 'static_file.id as staticFileId', 'static_file.extension', 'static_file.name as imgName', 'static_file.folder_name as folderName');
 
         $eventTypes = DB::table('event_type')
             ->select('type', 'name_cs as name')
             ->get();
-
-        return view('upcoming_events.upcoming_events', ['events' => $events->get(),
+        
+        return view('upcoming_events.upcoming_events', ['events' => $events->paginate(2)->withQueryString(),
             'eventTypes' => $eventTypes, 'selectedEventType' => $request->query('eventType')]);
     }
 }
