@@ -19,13 +19,15 @@ class DatabaseSeeder extends Seeder
         DB::table('event')->delete();
         DB::table('facility')->delete();
         DB::table('event_type')->delete();
+        DB::table('users')->delete();
 
         // Následně vše seednout
         $this->call([
             EventTypeSeeder::class,
             EventSeeder::class,
             FacilitySeeder::class,
-            StaticFileSeeder::class
+            StaticFileSeeder::class,
+            UserSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
     }
