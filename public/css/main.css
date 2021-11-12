@@ -134,11 +134,6 @@ h4 {
     font-weight: bold;
 }
 
-.c-review-form--label {
-    padding-left: 1rem;
-    min-width: 70px;
-}
-
 .rating {
     unicode-bidi: bidi-override;
     direction: rtl;
@@ -315,6 +310,20 @@ h4 {
     color: var(--color-light);
 }
 
+
+/* LOGIN */
+.c-login-form {
+    padding: 2rem;
+    background-color: var(--color-tertiary);
+    border-radius: var(--radius-normal);
+    margin: auto;
+    max-width: 400px;
+}
+
+.c-login-form > div {
+    margin-top: 1rem;
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;
@@ -322,10 +331,6 @@ h4 {
 
     #content-container {
         margin-top: 263px;
-    }
-
-    .c-review-form--label {
-        padding-left: 0.75rem;
     }
 
     .c-review-form--submit {

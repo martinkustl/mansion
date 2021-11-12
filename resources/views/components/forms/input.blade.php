@@ -1,7 +1,7 @@
 <div class="form-group row">
-    <label for={{$inputId}} class="col-sm-1 col-form-label c-review-form--label">{{$labelText}}</label>
-    <div class="col-sm-11">
-        <input type="text" class="form-control"
+    <label for={{$inputId}} class="col-form-label c-input--label">{{$labelText}}</label>
+    <div class="col c-input--div">
+        <input type={{$inputType}} class="form-control"
                id={{$inputId}} name={{$inputName}} placeholder={{$placeholder}}>
     </div>
 </div>
