@@ -13,7 +13,7 @@
 <form class="c-review-form p-4" method="POST" action="/reviews">
     @csrf
     <h3 class="c-review-form--heading">Vložte vlastní recenzi</h3>
-    <x-forms.text-input labelText="Jméno" placeholder="Jméno" inputId="name" inputName="name"/>
+    <x-forms.input inputType="text" labelText="Jméno" placeholder="Jméno" inputId="name" inputName="name"/>
     <x-forms.text-area labelText="Recenze" placeholder="Recenze" inputId="review" inputName="review"/>
     <div class="row align-items-center justify-content-between">
         <div class="col-md-6">

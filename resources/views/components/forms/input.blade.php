@@ -1,6 +1,6 @@
 <div class="form-group row">
-    <label for={{$inputId}} class="col-sm-3 col-form-label c-review-form--label">{{$labelText}}</label>
-    <div class="col-sm-9">
+    <label for={{$inputId}} class="col-form-label c-input--label">{{$labelText}}</label>
+    <div class="col c-input--div">
         <input type={{$inputType}} class="form-control"
                id={{$inputId}} name={{$inputName}} placeholder={{$placeholder}}>
     </div>
