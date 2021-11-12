@@ -315,6 +315,20 @@ h4 {
     color: var(--color-light);
 }
 
+
+/* LOGIN */
+.c-login-form {
+    padding: 2rem;
+    background-color: var(--color-tertiary);
+    border-radius: var(--radius-normal);
+    margin: auto;
+    max-width: 400px;
+}
+
+.c-login-form > div {
+    margin-top: 1rem;
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;

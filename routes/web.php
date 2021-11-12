@@ -6,7 +6,9 @@ use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\UpcomingEventsController;
-use \App\Http\Controllers\ContactsController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\LoginController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +29,7 @@ Route::get('/reviews', [ReviewsController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 
 Route::post('/reviews', [ReviewsController::class, 'createReview']);
+Route::get('/login', [LoginController::class, 'index']);
 
 // Detail eventu
 Route::get('/home/{id}', [EventController::class, 'index']);
