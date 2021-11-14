@@ -43,15 +43,15 @@ class EventSeeder extends Seeder
 Vannstein patří mezi nejinovativnější koncertní kapely současnosti. Proslulí jsou velkou divadelní show plnou ohňostrojů, ohňů, dělobuchů a světel. Plánují propagovat svou nově vydanou desku Härte, která sklidila velký ohlas. Rozhodně se je na co těšit.";
 
         $events = [
-            ['id' => 1, 'title' => "Název párty", 'date' => date('Y-m-d H:i:s', strtotime('2021-09-22 19:00:00 GMT+2',)), 'description' => $dummyDesc, "entrance_fee" => 250, "event_type_id" => 1],
-            ['id' => 2, 'title' => "Název koncertu", 'date' => date('Y-m-d H:i:s', strtotime('2023-07-22 17:00:00 GMT+2',)), 'description' => $dummyDec2, "entrance_fee" => 100, "event_type_id" => 2],
-            ['id' => 3, 'title' => "Název párty", 'date' => date('Y-m-d H:i:s', strtotime('2024-12-22 19:00:00 GMT+1',)), 'description' => $dummyDesc, "entrance_fee" => 200, "event_type_id" => 1],
-            ['id' => 4, 'title' => "Název párty", 'date' => date('Y-m-d H:i:s', strtotime('2023-11-05 19:00:00 GMT+1',)), 'description' => $dummyDesc, "entrance_fee" => 130, "event_type_id" => 1],
-            ['id' => 5, 'title' => "Název divadelní hry", 'date' => date('Y-m-d H:i:s', strtotime('2021-02-22 19:00:00 GMT+2',)), 'description' => $dummyDec2, "entrance_fee" => 100, "event_type_id" => 3],
-            ['id' => 6, 'title' => 'Zámek (F. Kafka)', 'date' => date('Y-m-d H:i:s', strtotime('2021-08-14 18:00:00 GMT+2')), 'description' => $realEventKafkaDesc, "entrance_fee" => 300, "event_type_id" => 3],
-            ['id' => 7, 'title' => 'Silvestrovská párty', 'date' => date('Y-m-d H:i:s', strtotime('2022-12-31 19:00:00 GMT+2')), 'description' => $realEventSilvesterPartyDesc, 'entrance_fee' => 200, 'event_type_id' => 1],
-            ['id' => 8, 'title' => 'Vánoční swingers párty', 'date' => date('Y-m-d H:i:s', strtotime('2022-12-24 19:00:00 GMT+2')), 'description' => $realEventChristmasPartyDesc, 'entrance_fee' => 1000, 'event_type_id' => 1],
-            ['id' => 9, 'title' => 'Vannstein', 'date' => date('Y-m-d H:i:s', strtotime('2020-10-18 16:00 GMT+2')), 'description' => $realEventConcert, 'entrance_fee' => 350, 'event_type_id' => 2]
+            ['id' => 1, 'title' => "Název párty", 'date' => date('Y-m-d H:i:s', strtotime('2021-09-22 19:00:00',)), 'description' => $dummyDesc, "entrance_fee" => 250, "event_type_id" => 1],
+            ['id' => 2, 'title' => "Název koncertu", 'date' => date('Y-m-d H:i:s', strtotime('2023-07-22 17:00:00',)), 'description' => $dummyDec2, "entrance_fee" => 100, "event_type_id" => 2],
+            ['id' => 3, 'title' => "Název párty", 'date' => date('Y-m-d H:i:s', strtotime('2024-12-22 19:00:00',)), 'description' => $dummyDesc, "entrance_fee" => 200, "event_type_id" => 1],
+            ['id' => 4, 'title' => "Název párty", 'date' => date('Y-m-d H:i:s', strtotime('2023-11-05 19:00:00',)), 'description' => $dummyDesc, "entrance_fee" => 130, "event_type_id" => 1],
+            ['id' => 5, 'title' => "Název divadelní hry", 'date' => date('Y-m-d H:i:s', strtotime('2021-02-22 19:00:00',)), 'description' => $dummyDec2, "entrance_fee" => 100, "event_type_id" => 3],
+            ['id' => 6, 'title' => 'Zámek (F. Kafka)', 'date' => date('Y-m-d H:i:s', strtotime('2021-08-14 18:00:00')), 'description' => $realEventKafkaDesc, "entrance_fee" => 300, "event_type_id" => 3],
+            ['id' => 7, 'title' => 'Silvestrovská párty', 'date' => date('Y-m-d H:i:s', strtotime('2022-12-31 19:00:00')), 'description' => $realEventSilvesterPartyDesc, 'entrance_fee' => 200, 'event_type_id' => 1],
+            ['id' => 8, 'title' => 'Vánoční swingers párty', 'date' => date('Y-m-d H:i:s', strtotime('2022-12-24 19:00:00')), 'description' => $realEventChristmasPartyDesc, 'entrance_fee' => 1000, 'event_type_id' => 1],
+            ['id' => 9, 'title' => 'Vannstein', 'date' => date('Y-m-d H:i:s', strtotime('2020-10-18 16:00')), 'description' => $realEventConcert, 'entrance_fee' => 350, 'event_type_id' => 2]
         ];
 
         DB::table('event')->insert($events);

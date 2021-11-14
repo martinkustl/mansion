@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
     public function index()
     {
-        dump(Hash::make('heslo'));
-
         return view('login.login');
     }
 
     /**
      * Logika pro ošetření přihlášení a hlídání auth pokusů
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
      */
 
-    public function login(Request $request)
+    public function login(Request $request): RedirectResponse
     {
         $validatedCredentials = $request->validate([
             'email' => ['required', 'email'],

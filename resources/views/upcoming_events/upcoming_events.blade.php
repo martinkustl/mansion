@@ -36,10 +36,10 @@
                     @foreach($eventTypes as $eventType)
                         <div class="form-check">
                             <input class="form-check-input c-radio-button" type="radio"
-                                   id={{$eventType->type}} name="eventType" value="{{$eventType->type}}"
+                                   id="{{$eventType->type}}" name="eventType" value="{{$eventType->type}}"
                                 {{$selectedEventType === $eventType->type ? 'checked' : ''}}
                             >
-                            <label class="form-check-label" for={{$eventType->type}}>
+                            <label class="form-check-label" for="{{$eventType->type}}">
                                 {{$eventType->name}}
                             </label>
                         </div>
@@ -62,6 +62,12 @@
         </form>
     </div>
 </div>
+
+@auth
+    <a href="/events/new">
+        Přidat nový event
+    </a>
+@endauth
 
 {{-- Vykreslení eventů --}}
 <x-event-list :events="$events" basePath="events"/>

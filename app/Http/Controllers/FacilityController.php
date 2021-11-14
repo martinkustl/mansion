@@ -19,7 +19,7 @@ class FacilityController extends Controller
     }
 
 
-    private function getAllFacilityImages(int $facilityId)
+    private function getAllFacilityImages(int $facilityId): array
     {
         return DB::table('static_file')->where('facility_id', '=', $facilityId)
             ->select('name as imgName', 'extension', 'id as staticFileId', 'folder_name as folderName')

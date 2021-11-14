@@ -20,11 +20,11 @@ class FacilitiesController extends Controller
     }
 
 
-    private function addImageToFacility(object $facility)
+    private function addImageToFacility(object $facility): object
     {
         $img = DB::table('static_file')->where('facility_id', '=', $facility->id)
             ->select('name as imgName', 'extension', 'id as staticFileId', 'folder_name as folderName')
             ->first();
-        return (object) array_merge((array) $facility, (array) $img);
+        return (object)array_merge((array)$facility, (array)$img);
     }
 }
