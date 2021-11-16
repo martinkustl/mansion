@@ -38,6 +38,8 @@ Route::post('/login', [LoginController::class, 'login']);
 // Detail eventu
 Route::get('/home/{id}', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'index']);
+
+
 Route::get('/facilities/{id}', [FacilityController::class, 'index']);
 
 

@@ -69,13 +69,25 @@
     </a>
 @endauth
 
-<form class="c-form c-new-event--form mb-3" action="/events" method="POST" enctype="multipart/form-data">
+<form class="c-form c-new-event--form mb-3" action="/events" method="POST" enctype="multipart/form-data"
+      id="new-event-form">
     @csrf
     <div class="row">
-        <div class="col-4">
-            <x-forms.image-input/>
+        <div class="col-md-4 mb-3 mb-md-0">
+            <label id="eventImageLabel" for="eventImage" class="w-100 h-100"
+                   style="cursor: pointer; border: 1px dashed black; display: flex; align-items: center; justify-content: center; position: relative; min-height: 200px">
+                <span>
+                    Nahrajte obrázek akce
+                </span>
+            </label>
+            <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
+                   style="position: absolute; opacity:0; z-index: -1">
+
+            @error("eventImage")
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
-        <div class="col-8">
+        <div class="col-md-8 c-form--inputs-wrapper">
             <x-forms.input inputType="text" labelText="Název" placeholder="Název" inputId="title" inputName="title"/>
             <fieldset class="d-flex align-items-center flex-row c-radios-wrapper">
                 <legend class="w-auto" style="white-space: nowrap; font-size: 1rem; margin-bottom: 0;">Typ akce</legend>
@@ -84,7 +96,6 @@
                         <div class="form-check">
                             <input class="form-check-input c-radio-button" type="radio"
                                    id="{{$eventType->type}}" name="eventType" value="{{$eventType->id}}"
-                                {{$selectedEventType === $eventType->type ? 'checked' : ''}}
                             >
                             <label class="form-check-label" for="{{$eventType->type}}">
                                 {{$eventType->name}}
@@ -114,4 +125,18 @@
 <div style="height: 3rem">
     {{ $events->links("") }}
 </div>
+
+
+{{-- TODO - RESET FORM?? --}}
+{{--<script>--}}
+{{--    function resetForm() {--}}
+{{--        const form = document.querySelector("#new-event-form");--}}
+{{--        form.reset();--}}
+{{--        const inputLabel = document.querySelector('#eventImageLabel')--}}
+{{--        inputLabel.innerHTML = ''--}}
+{{--        inputLabel.insertAdjacentHTML('afterbegin', `--}}
+{{--            <span>Nahrajte obrázek akce</span>--}}
+{{--        `)--}}
+{{--    }--}}
+{{--</script>--}}
 @endsection

@@ -7,8 +7,6 @@ use App\Models\StaticFile;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Exception;
 
 class UpcomingEventsController extends Controller
 {
@@ -41,7 +39,9 @@ class UpcomingEventsController extends Controller
     public function createEvent(Request $request)
     {
         $validatedEvent = $request->validate([
+            // TODO - přidat max délku
             'title' => 'required',
+            // TODO - přidání validace, aby datum bylo od současnosti dál
             'date' => 'required|date',
             'price' => 'integer',
             'description' => 'required',
