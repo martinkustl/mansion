@@ -11,11 +11,12 @@
 @endsection
 
 <!-- Button trigger modal -->
+
 <div class="d-flex justify-content-center">
     <button type="button"
             class="btn btn-primary c-btn-primary c-btn-filter w-100 mb-3 col justify-self-center align-middle d-flex justify-content-between align-items-center"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal">
+            data-bs-target="#filterModal">
         <span class="me-2 md-fs-5">
         Filtr dle typu akce
         </span>
@@ -24,12 +25,12 @@
 </div>
 
 <!-- Modal Form -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered">
         <form class="modal-content" method="GET" action="/events">
             @csrf
             <header class="modal-header d-flex justify-content-center">
-                <h3 class="modal-title text-center" id="exampleModalLabel">Filtr dle typu akce</h3>
+                <h3 class="modal-title text-center" id="filterModalTitle">Filtr dle typu akce</h3>
             </header>
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
                 <fieldset class="d-flex justify-content-center align-items-center flex-row c-radios-wrapper">
@@ -139,4 +140,5 @@
 {{--        `)--}}
 {{--    }--}}
 {{--</script>--}}
+
 @endsection

@@ -23,11 +23,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', [HomeController::class, 'index']);
+Route::delete('/home/{id}', [HomeController::class, 'deleteEvent']);
+
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 
 Route::get('/events', [UpcomingEventsController::class, 'index']);
 Route::post('/events', [UpcomingEventsController::class, 'createEvent']);
+Route::delete('/events/{id}', [UpcomingEventsController::class, 'deleteEvent']);
 
 Route::get('/reviews', [ReviewsController::class, 'index']);
 Route::post('/reviews', [ReviewsController::class, 'createReview']);

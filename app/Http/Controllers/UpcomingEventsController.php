@@ -4,12 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\StaticFile;
+use App\Services\EventService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UpcomingEventsController extends Controller
 {
+    // Event servisa obsahuje sdílenou logiku pro event
+    // lze ji najít v App/Services/EventService
+    // Aby ji šlo použít, tak je potřeba vytvořit proměnnou, a následně ji zavolat v konstruktoru
+    protected $eventService;
+
+    public function __construct(EventService $eventService)
+    {
+        $this->eventService = $eventService;
+    }
+
     public function index(Request $request)
     {
         // Získá akce, které dnes probíhají nebo teprve proběhnou
@@ -76,5 +87,13 @@ class UpcomingEventsController extends Controller
 
 
         return redirect('/events');
+    }
+
+    public function deleteEvent(Request $request)
+    {
+        $this->eventService->deleteEvent($request);
+
+        return redirect('/events');
+
     }
 }
