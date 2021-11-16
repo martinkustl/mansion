@@ -23,19 +23,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', [HomeController::class, 'index']);
-Route::delete('/home/{id}', [HomeController::class, 'deleteEvent']);
+Route::delete('/home/{id}', [HomeController::class, 'deleteEvent'])->middleware('auth');;
 
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 
 Route::get('/events', [UpcomingEventsController::class, 'index']);
-Route::post('/events', [UpcomingEventsController::class, 'createEvent']);
-Route::delete('/events/{id}', [UpcomingEventsController::class, 'deleteEvent']);
+Route::post('/events', [UpcomingEventsController::class, 'createEvent'])->middleware('auth');;
+Route::delete('/events/{id}', [UpcomingEventsController::class, 'deleteEvent'])->middleware('auth');;
 
 Route::get('/reviews', [ReviewsController::class, 'index']);
 Route::post('/reviews', [ReviewsController::class, 'createReview']);
 
-Route::get('/login', [LoginController::class, 'index']);
+// Tato cesta musí mít přiřazené jméno, protože v Auth middleware je nastaveno, že
+// pokud uživatel není přihlášení a zkusí provést akci, ke které nemá oprávnění,
+// tak bude přesměrován na route se jménem "login"
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 // Detail eventu
