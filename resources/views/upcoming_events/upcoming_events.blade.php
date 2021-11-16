@@ -23,46 +23,42 @@
         <i class="bi bi-filter c-filter-icon"></i>
     </button>
 </div>
-
-<!-- Modal Form -->
-<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-md modal-dialog-centered">
-        <form class="modal-content" method="GET" action="/events">
-            @csrf
-            <header class="modal-header d-flex justify-content-center">
-                <h3 class="modal-title text-center" id="filterModalTitle">Filtr dle typu akce</h3>
-            </header>
-            <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                <fieldset class="d-flex justify-content-center align-items-center flex-row c-radios-wrapper">
-                    @foreach($eventTypes as $eventType)
-                        <div class="form-check">
-                            <input class="form-check-input c-radio-button" type="radio"
-                                   id="{{$eventType->type}}" name="eventType" value="{{$eventType->type}}"
-                                {{$selectedEventType === $eventType->type ? 'checked' : ''}}
-                            >
-                            <label class="form-check-label" for="{{$eventType->type}}">
-                                {{$eventType->name}}
-                            </label>
-                        </div>
-                    @endforeach
+<x-centered-modal id="filterModal" labeledBy="filterModalTitle">
+    <form class="modal-content" method="GET" action="/events">
+        @csrf
+        <div class="modal-header d-flex justify-content-center">
+            <h3 class="modal-title text-center" id="filterModalTitle">Filtr dle typu akce</h3>
+        </div>
+        <div class="modal-body d-flex justify-content-center align-items-center flex-column">
+            <fieldset class="d-flex justify-content-center align-items-center flex-row c-radios-wrapper">
+                @foreach($eventTypes as $eventType)
                     <div class="form-check">
                         <input class="form-check-input c-radio-button" type="radio"
-                               id="all" name="eventType" value=""
-                            {{!$selectedEventType ? 'checked' : ''}}
+                               id="{{$eventType->type}}" name="eventType" value="{{$eventType->type}}"
+                            {{$selectedEventType === $eventType->type ? 'checked' : ''}}
                         >
-                        <label class="form-check-label" for="all">
-                            Vše
+                        <label class="form-check-label" for="{{$eventType->type}}">
+                            {{$eventType->name}}
                         </label>
                     </div>
-                </fieldset>
-            </div>
-            <footer class="modal-footer d-flex justify-content-center align-items-center flex-row">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
-                <button type="submit" class="btn btn-primary c-btn-primary">Filtrovat</button>
-            </footer>
-        </form>
-    </div>
-</div>
+                @endforeach
+                <div class="form-check">
+                    <input class="form-check-input c-radio-button" type="radio"
+                           id="all" name="eventType" value=""
+                        {{!$selectedEventType ? 'checked' : ''}}
+                    >
+                    <label class="form-check-label" for="all">
+                        Vše
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="modal-footer d-flex justify-content-center align-items-center flex-row">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+            <button type="submit" class="btn btn-primary c-btn-primary">Filtrovat</button>
+        </div>
+    </form>
+</x-centered-modal>
 
 @auth
     <a href="/events/new">

@@ -26,32 +26,28 @@
                 data-bs-target="#deleteEventModal{{$eventId}}">
             <i class="bi bi-trash"></i>
         </button>
-        <!-- Modal -->
-        <div class="modal fade" id="deleteEventModal{{$eventId}}" tabindex="-1"
-             aria-labelledby="deleteEventModalTitle"
-             aria-hidden="true"
-             role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <form method="POST" action="/{{$basePath}}/{{$eventId}}">
-                        @csrf
-                        {{-- HTML formulář akceptuje pouze POST/GET, pro použití jiných metod je potřeba využít--}}
-                        {{-- laravel funkci method--}}
-                        @method('DELETE')
-                        <div class="modal-body">
-                            <p>Opravdu chcete smazat událost {{$title}}?</p>
-                            <input value="{{$eventId}}" name="eventId" type="hidden">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                Zavřít
-                            </button>
-                            <input type="submit" class="btn btn-primary" value="Smazat událost">
-                        </div>
-                    </form>
-                </div>
+
+        <x-centered-modal id="deleteEventModal{{$eventId}}" labeledBy="deleteEventModalTitle">
+            <div class="modal-header d-flex justify-content-center">
+                <h3 class="modal-title text-center" id="deleteEventModalTitle">Potvrzení smazání akce</h3>
             </div>
-        </div>
+            <form method="POST" action="/{{$basePath}}/{{$eventId}}">
+                @csrf
+                {{-- HTML formulář akceptuje pouze POST/GET, pro použití jiných metod je potřeba využít--}}
+                {{-- laravel funkci method--}}
+                @method('DELETE')
+                <div class="modal-body">
+                    <p>Opravdu chcete smazat událost {{$title}}?</p>
+                    <input value="{{$eventId}}" name="eventId" type="hidden">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Zavřít
+                    </button>
+                    <input type="submit" class="btn btn-primary c-btn-primary" value="Smazat událost">
+                </div>
+            </form>
+        </x-centered-modal>
     </aside>
 
 </li>
