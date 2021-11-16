@@ -69,6 +69,46 @@
     </a>
 @endauth
 
+<form class="c-form c-new-event--form mb-3" action="/events" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="row">
+        <div class="col-4">
+            <x-forms.image-input/>
+        </div>
+        <div class="col-8">
+            <x-forms.input inputType="text" labelText="Název" placeholder="Název" inputId="title" inputName="title"/>
+            <fieldset class="d-flex align-items-center flex-row c-radios-wrapper">
+                <legend class="w-auto" style="white-space: nowrap; font-size: 1rem; margin-bottom: 0;">Typ akce</legend>
+                <div class="d-flex w-100 align-items-center flex-row c-radios-wrapper">
+                    @foreach($eventTypes as $eventType)
+                        <div class="form-check">
+                            <input class="form-check-input c-radio-button" type="radio"
+                                   id="{{$eventType->type}}" name="eventType" value="{{$eventType->id}}"
+                                {{$selectedEventType === $eventType->type ? 'checked' : ''}}
+                            >
+                            <label class="form-check-label" for="{{$eventType->type}}">
+                                {{$eventType->name}}
+                            </label>
+                        </div>
+                    @endforeach
+                    @error("eventType")
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+            </fieldset>
+            <x-forms.input inputType="date" labelText="Datum" placeholder="Datum ve formátu DD.MM.YYYY"
+                           inputId="date"
+                           inputName="date"/>
+            <x-forms.input inputType="number" labelText="Cena" placeholder="Cena (pouze číslo)" inputId="price"
+                           inputName="price"/>
+            <x-forms.text-area labelText="Popis" placeholder="Popis" inputId="description" inputName="description"/>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end w-100 mt-3">
+        <x-forms.submit-button btnText="Vytvořit"/>
+    </div>
+</form>
+
 {{-- Vykreslení eventů --}}
 <x-event-list :events="$events" basePath="events"/>
 <div style="height: 3rem">
