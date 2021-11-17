@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\EventService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    //
+    protected $eventService;
+
+    public function __construct(EventService $eventService)
+    {
+        $this->eventService = $eventService;
+    }
+
+
     public function index()
     {
         // Získá akce, které již proběhly
@@ -21,5 +29,13 @@ class HomeController extends Controller
             ->get();
 
         return view('home.home', ['events' => $events]);
+    }
+
+    public function deleteEvent(Request $request)
+    {
+        $this->eventService->deleteEvent($request);
+
+        return redirect('/');
+
     }
 }

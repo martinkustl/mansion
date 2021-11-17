@@ -11,25 +11,33 @@ class EventCard extends Component
     public $date;
     public $imgPath;
     public $imgName;
+    public $eventId;
+    public $basePath;
+    public $isEditable;
 
     /**
      * Create a new component instance.
      *
-     * @param  string  $title
-     * @param  string  $description
-     * @param  string  $date
-     * @param  string  $imgPath
-     * @param  string  $imgName
-     * 
-     * @return void
+     * @param string $title
+     * @param string $description
+     * @param string $date
+     * @param string $imgPath
+     * @param string $imgName
+     * @param int $eventId
+     * @param string $basePath
+     * @param bool $isEditable
+     *
      */
-    public function __construct(string $title, string $description, string $date, string $imgPath, string $imgName)
+    public function __construct(string $title, string $description, string $date, string $imgPath, string $imgName, int $eventId, string $basePath, bool $isEditable = false)
     {
         $this->title = $title;
         $this->description = $description;
         $this->date = $date;
         $this->imgPath = $imgPath;
         $this->imgName = $imgName;
+        $this->eventId = $eventId;
+        $this->basePath = $basePath;
+        $this->isEditable = $isEditable;
     }
 
     /**

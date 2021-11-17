@@ -9,17 +9,21 @@ class EventList extends Component
 
     public $events;
     public $basePath;
+    public $isEditable;
+
     /**
      * Create a new component instance.
-     *  
+     *
      * @param object $events
      * @param string $basePath
+     * @param bool $isEditable
      * @return void
      */
-    public function __construct(object $events, string $basePath)
+    public function __construct(object $events, string $basePath, bool $isEditable = false)
     {
         $this->events = $events;
         $this->basePath = $basePath;
+        $this->isEditable = $isEditable;
     }
 
     /**

@@ -11,6 +11,7 @@ class Input extends Component
     public $placeholder;
     public $inputName;
     public $inputType;
+    public $inputValue;
 
     /**
      * Create a new component instance.
@@ -19,16 +20,18 @@ class Input extends Component
      * @param string $placeholder
      * @param string $inputName
      * @param string $inputType
+     * @param string|int $inputValue
      *
      * @return void
      */
-    public function __construct(string $labelText, string $inputId, string $placeholder, string $inputName, string $inputType)
+    public function __construct(string $labelText, string $inputId, string $placeholder, string $inputName, string $inputType, $inputValue = '')
     {
         $this->labelText = $labelText;
         $this->inputId = $inputId;
         $this->placeholder = $placeholder;
         $this->inputName = $inputName;
         $this->inputType = $inputType;
+        $this->inputValue = $inputValue;
     }
 
     /**

@@ -44,6 +44,7 @@
         crossorigin="anonymous"></script>
 <script src="/js/navbar.js"></script>
 <script src="/js/rating.js"></script>
+<script src="/js/image-upload.js"></script>
 </body>
 
 </html>
