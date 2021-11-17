@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    {{--    TODO - přidat tlačítko zpět --}}
     <form method="POST" action="/events/{{$event->id}}/edit" enctype="multipart/form-data">
         @method("PUT")
         @csrf
