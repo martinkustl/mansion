@@ -73,10 +73,10 @@ class UpcomingEventsController extends Controller
 
         // Uložení obrázku do DB, včetně přiřazení k eventu z předchozího kroku
         $staticFile = new StaticFile;
-        $staticFile->mime_type = $request->eventImage->getMimeType();
-        $staticFile->extension = '.' . $request->eventImage->getClientOriginalExtension();
+        $staticFile->mime_type = $validatedEvent['eventImage']->getMimeType();
+        $staticFile->extension = '.' . $validatedEvent['eventImage']->getClientOriginalExtension();
         $staticFile->folder_name = 'events';
-        $staticFile->name = $request->eventImage->getClientOriginalName();
+        $staticFile->name = $validatedEvent['eventImage']->getClientOriginalName();
         $staticFile->event_id = $event->id;
         $staticFile->save();
 
@@ -85,7 +85,7 @@ class UpcomingEventsController extends Controller
         // to znamená, že cokoliv je ve storage složce, se v aplikací objeví i v public složce
         // nicméně od začátku byly obrázky ukádány přímo do složky public, a tak z důvodu konzitentního chování
         // byl zvolen tento přístup
-        $request->eventImage->move(public_path() . '/images/events', $staticFile->id . '' . $staticFile->extension);
+        $validatedEvent['eventImage']->move(public_path() . '/images/events', $staticFile->id . '' . $staticFile->extension);
 
 
         return redirect('/events');
@@ -98,5 +98,5 @@ class UpcomingEventsController extends Controller
         return redirect('/events');
 
     }
-    
+
 }

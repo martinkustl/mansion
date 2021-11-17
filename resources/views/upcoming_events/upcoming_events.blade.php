@@ -75,7 +75,7 @@
                 <select class="form-select w-100" aria-label="multiple select" name="eventType">
                     @foreach($eventTypes as $eventType)
                         <option
-                            value="{{$eventType->type}}" {{$selectedEventType === $eventType->type ? 'selected' : ''}}>{{$eventType->name}}</option>
+                            value="{{$eventType->id}}" {{$selectedEventType === $eventType->type ? 'selected' : ''}}>{{$eventType->name}}</option>
                     @endforeach
                     <option value="" {{!$selectedEventType ? 'selected' : ''}}>Vše</option>
                 </select>

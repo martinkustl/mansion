@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <form method="POST" action="/events" enctype="multipart/form-data">
+    <form method="POST" action="/events/{{$event->id}}/edit" enctype="multipart/form-data">
         @method("PUT")
         @csrf
         <div class="edit-event--uploaded-image">
@@ -14,7 +14,7 @@
                      alt="{{$event->imgName}}"/>
             </label>
             <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
-                   style="position: absolute; opacity:0; z-index: -1" required>
+                   style="position: absolute; opacity:0; z-index: -1">
 
             @error("eventImage")
             <div class="alert alert-danger">{{ $message }}</div>
@@ -28,7 +28,7 @@
         <select class="form-select w-100" aria-label="multiple select" name="eventType">
             @foreach($eventTypes as $eventType)
                 <option
-                    value="{{$eventType->type}}" {{$event->selectedEventType === $eventType->type ? 'selected' : ''}}>{{$eventType->name}}</option>
+                    value="{{$eventType->id}}" {{$event->selectedEventType === $eventType->type ? 'selected' : ''}}>{{$eventType->name}}</option>
             @endforeach
             <option value="" {{!$event->selectedEventType ? 'selected' : ''}}>Vše</option>
         </select>
