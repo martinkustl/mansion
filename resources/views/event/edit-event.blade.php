@@ -9,8 +9,7 @@
         @method("PUT")
         @csrf
         <div class="edit-event--uploaded-image">
-            <label id="eventImageLabel" for="eventImage" class="w-100 h-100"
-                   style="cursor: pointer; border: 1px dashed black; display: flex; align-items: center; justify-content: center; position: relative; min-height: 200px">
+            <label id="eventImageLabel" for="eventImage" class="w-100 h-100">
                 <img class="event-detail--image" src="/images/events/{{$event->staticFileId.$event->extension}}"
                      alt="{{$event->imgName}}"/>
             </label>
