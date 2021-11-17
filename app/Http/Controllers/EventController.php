@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\StaticFile;
+use App\Services\StaticFileService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
+    protected $staticFileService;
+
+    public function __construct(StaticFileService $staticFileService)
+    {
+        $this->staticFileService = $staticFileService;
+    }
+
     public function index(Request $request)
     {
         $event = DB::table('event')
@@ -61,16 +69,10 @@ class EventController extends Controller
             'event_type_id' => $validatedEvent['eventType'],
         ]);
 
-        DB::table('static_file')->where('event_id', '=', $eventId)->update([
-            'mime_type' => $validatedEvent['eventImage']->getMimeType(),
-            'extension' => '.' . $validatedEvent['eventImage']->getClientOriginalExtension(),
-            'name' => $validatedEvent['eventImage']->getClientOriginalName(),
-        ]);
+        if ($validatedEvent['eventImage']) {
+            $this->staticFileService->updateEventStaticFile($validatedEvent['eventImage'], $eventId);
+        }
 
-        $staticFile = DB::table('static_file')->where('event_id', '=', $eventId)->first();
-
-        $validatedEvent['eventImage']->move(public_path() . '/images/events', $staticFile->id . '' . $staticFile->extension);
-
-        return redirect('/events/' . $eventId);
+        return redirect('/events/' . $eventId . '/edit');
     }
 }

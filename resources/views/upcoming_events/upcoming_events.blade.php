@@ -77,7 +77,6 @@
                         <option
                             value="{{$eventType->id}}" {{$selectedEventType === $eventType->type ? 'selected' : ''}}>{{$eventType->name}}</option>
                     @endforeach
-                    <option value="" {{!$selectedEventType ? 'selected' : ''}}>Vše</option>
                 </select>
                 @error("eventType")
                 <div class="alert alert-danger">{{ $message }}</div>

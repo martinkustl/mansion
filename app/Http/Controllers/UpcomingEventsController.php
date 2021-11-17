@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\StaticFile;
 use App\Services\EventService;
+use App\Services\StaticFileService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,10 +16,12 @@ class UpcomingEventsController extends Controller
     // lze ji najít v App/Services/EventService
     // Aby ji šlo použít, tak je potřeba vytvořit proměnnou, a následně ji zavolat v konstruktoru
     protected $eventService;
+    protected $staticFileService;
 
-    public function __construct(EventService $eventService)
+    public function __construct(EventService $eventService, StaticFileService $staticFileService)
     {
         $this->eventService = $eventService;
+        $this->staticFileService = $staticFileService;
     }
 
     public function index(Request $request)
@@ -72,21 +75,7 @@ class UpcomingEventsController extends Controller
         $event->save();
 
         // Uložení obrázku do DB, včetně přiřazení k eventu z předchozího kroku
-        $staticFile = new StaticFile;
-        $staticFile->mime_type = $validatedEvent['eventImage']->getMimeType();
-        $staticFile->extension = '.' . $validatedEvent['eventImage']->getClientOriginalExtension();
-        $staticFile->folder_name = 'events';
-        $staticFile->name = $validatedEvent['eventImage']->getClientOriginalName();
-        $staticFile->event_id = $event->id;
-        $staticFile->save();
-
-        // místo move lze také použít metodu store, nicméně ta by to uložila do složky storage
-        // to by ničemu nevadilo, protože je mezi klasickou public složkou a storage složkou symlink
-        // to znamená, že cokoliv je ve storage složce, se v aplikací objeví i v public složce
-        // nicméně od začátku byly obrázky ukádány přímo do složky public, a tak z důvodu konzitentního chování
-        // byl zvolen tento přístup
-        $validatedEvent['eventImage']->move(public_path() . '/images/events', $staticFile->id . '' . $staticFile->extension);
-
+        $this->staticFileService->createEventStaticFile($validatedEvent['eventImage'], $event->id);
 
         return redirect('/events');
     }
