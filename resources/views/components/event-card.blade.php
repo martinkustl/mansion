@@ -1,5 +1,5 @@
-<li class="d-flex flex-column flex-md-row">
-    <a class="event-list__link flex-grow-1 mb-3" href="{{$basePath}}/{{$eventId}}">
+<li class="d-flex flex-column flex-md-row mb-3">
+    <a class="event-list__link flex-grow-1" href="{{$basePath}}/{{$eventId}}">
         <article class="card c-card">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -17,18 +17,29 @@
             </div>
         </article>
     </a>
-    <aside>
+    <aside class="d-flex flex-column card--aside">
         @if($isEditable === true)
-            <a href="{{$basePath}}/{{$eventId}}/edit">
+            <a href="{{$basePath}}/{{$eventId}}/edit"
+               class="event-detail--edit-link flex-grow-1 d-flex justify-content-center align-items-center">
                 <i class="bi bi-pencil"></i>
             </a>
     @endif
     <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary c-btn-primary border" data-bs-toggle="modal"
+        <button type="button"
+                @class([
+                    'btn',
+                    'border',
+                    'event-detail--delete-button',
+                    'flex-grow-1',
+                    'd-flex',
+                    'justify-content-center',
+                    'align-items-center',
+                    'event-detail--delete-button__alone'=>$isEditable !== true
+                ])
+                data-bs-toggle="modal"
                 data-bs-target="#deleteEventModal{{$eventId}}">
             <i class="bi bi-trash"></i>
         </button>
-
         <x-centered-modal id="deleteEventModal{{$eventId}}" labeledBy="deleteEventModalTitle">
             <div class="modal-header d-flex justify-content-center">
                 <h3 class="modal-title text-center" id="deleteEventModalTitle">Potvrzení smazání akce</h3>
