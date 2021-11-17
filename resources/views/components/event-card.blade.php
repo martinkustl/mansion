@@ -18,10 +18,12 @@
         </article>
     </a>
     <aside>
-        <a href="events/{{$eventId}}/edit">
-            <i class="bi bi-pencil"></i>
-        </a>
-        <!-- Button trigger modal -->
+        @if($isEditable === true)
+            <a href="{{$basePath}}/{{$eventId}}/edit">
+                <i class="bi bi-pencil"></i>
+            </a>
+    @endif
+    <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary c-btn-primary border" data-bs-toggle="modal"
                 data-bs-target="#deleteEventModal{{$eventId}}">
             <i class="bi bi-trash"></i>

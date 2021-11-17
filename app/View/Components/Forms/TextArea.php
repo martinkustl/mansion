@@ -10,6 +10,7 @@ class TextArea extends Component
     public $inputId;
     public $placeholder;
     public $inputName;
+    public $inputValue;
 
     /**
      * Create a new component instance.
@@ -18,16 +19,18 @@ class TextArea extends Component
      * @param string $inputId
      * @param string $placeholder
      * @param string $inputName
+     * @param string $inputValue
      *
      * @return void
      */
 
-    public function __construct(string $labelText, string $inputId, string $placeholder, string $inputName)
+    public function __construct(string $labelText, string $inputId, string $placeholder, string $inputName, string $inputValue = '')
     {
         $this->labelText = $labelText;
         $this->inputId = $inputId;
         $this->placeholder = $placeholder;
         $this->inputName = $inputName;
+        $this->inputValue = $inputValue;
     }
 
     /**

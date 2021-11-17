@@ -6,6 +6,7 @@
                       :imgName="$event->imgName"
                       :eventId="$event->id"
                       :basePath="$basePath"
+                      :isEditable="$isEditable"
         />
     @endforeach
     @if(count($events) === 0)

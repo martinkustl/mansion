@@ -5,25 +5,55 @@
 @endsection
 
 @section('content')
-    {{--    <article class="event-detail--wrapper">--}}
-    {{--        <h2 class="detail-page--title">{{$event->title}}</h2>--}}
-    {{--        <h3 class="event-detail--date">--}}
-    {{--            {{format_datetime($event->date)}}--}}
-    {{--        </h3>--}}
-    {{--        <h3 class="event-detail--price">{{$event->entrance_fee}} Kč</h3>--}}
+    <form method="POST" action="/events" enctype="multipart/form-data">
+        @method("PUT")
+        @csrf
+        <div class="edit-event--uploaded-image">
+            <label id="eventImageLabel" for="eventImage" class="w-100 h-100"
+                   style="cursor: pointer; border: 1px dashed black; display: flex; align-items: center; justify-content: center; position: relative; min-height: 200px">
+                <img class="event-detail--image" src="/images/events/{{$event->staticFileId.$event->extension}}"
+                     alt="{{$event->imgName}}"/>
+            </label>
+            <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
+                   style="position: absolute; opacity:0; z-index: -1" required>
 
-    {{--        <img src="/images/events/{{$event->static_file_id.$event->extension}}" class="event-detail--image"--}}
-    {{--             alt="{{$event->name}}">--}}
-    {{--        --}}{{-- <p>{{!! nl2br($event->description) !!}}</p> --}}
+            @error("eventImage")
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <x-forms.input inputType="text" labelText="Název" placeholder="Název" inputId="title"
+                       inputName="title" inputValue="{{$event->title}}" required/>
+        <label class="w-auto" style="white-space: nowrap; font-size: 1rem; margin-bottom: 0;"
+               for="eventType">Typ akce
+        </label>
+        <select class="form-select w-100" aria-label="multiple select" name="eventType">
+            @foreach($eventTypes as $eventType)
+                <option
+                    value="{{$eventType->type}}" {{$event->selectedEventType === $eventType->type ? 'selected' : ''}}>{{$eventType->name}}</option>
+            @endforeach
+            <option value="" {{!$event->selectedEventType ? 'selected' : ''}}>Vše</option>
+        </select>
+        @error("eventType")
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <x-forms.input inputType="datetime-local" labelText="Datum" placeholder="Datum ve formátu DD.MM.YYYY"
+                       inputId="date"
+                       inputName="date"
+                       {{-- datetime-local vyžaduje specifický datetime formát, jinak hodnotu nezobrazí --}}
+                       inputValue="{{date('Y-m-d\TH:i:s', strtotime($event->date))}}"
+                       required
 
-    {{--        <p>--}}
-    {{--            --}}{{-- V textu je třeba respektovat line breaky. To ale nejde s defaultním Laravel espacovaním (ochrana proti XSS) --}}
-    {{--            --}}{{-- Proto je třeba použít !!, což Laravelu říká, aby neescapoval html tagy. Následně převést \n na line breaky (nl2br) --}}
-    {{--            --}}{{-- A následně text vyescapovat manualně (e) --}}
-    {{--            {!! nl2br(e($event->description)) !!}--}}
-    {{--        </p>--}}
-    {{--    </article>--}}
-    <form>
-
+        />
+        <x-forms.input inputType="number" labelText="Cena" placeholder="Cena (pouze číslo)" inputId="price"
+                       inputName="price" inputValue="{{$event->entrance_fee}}" required/>
+        <x-forms.text-area labelText="Popis" placeholder="Popis" inputId="description" inputName="description"
+                           inputValue="{{$event->description}}" required/>
+        <div class="d-flex justify-content-end w-100 mt-3">
+            <a href="/events" type="button" class="btn btn-secondary me-3" data-bs-dismiss="modal">
+                Zrušit změny a vrátit se na seznam
+            </a>
+            <x-forms.submit-button btnText="Potvrdit změny"/>
+        </div>
     </form>
 @endsection
+

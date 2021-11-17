@@ -1,8 +1,9 @@
 <div class="form-group row">
-    <label for="{{$inputId}}" class="col-form-label c-input--label">{{$labelText}}</label>
-    <div class="col c-input--div">
+    <label for="{{$inputId}}" class="col-12 col-form-label c-input--label">{{$labelText}}</label>
+    <div class="col-12 col c-input--div">
         <input type="{{$inputType}}" class="form-control"
-               id="{{$inputId}}" name="{{$inputName}}" placeholder="{{$placeholder}}">
+               id="{{$inputId}}" name="{{$inputName}}" placeholder="{{$placeholder}}" value="{{$inputValue}}"
+            {{$attributes}}>
     </div>
 </div>
 @error($inputName)

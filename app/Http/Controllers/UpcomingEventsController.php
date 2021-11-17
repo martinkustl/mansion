@@ -49,12 +49,12 @@ class UpcomingEventsController extends Controller
 
     public function createEvent(Request $request)
     {
+        // Vytvoření aktuálního datumu
         $todayDate = Carbon::now();
 
         $validatedEvent = $request->validate([
-            // TODO - přidat max délku
             'title' => 'required|max:45',
-            // TODO - přidání validace, aby datum bylo od současnosti dál
+            // Datum musí být v budoucnosti
             'date' => 'required|date|after_or_equal:' . $todayDate . '',
             'price' => 'integer',
             'description' => 'required',
@@ -98,4 +98,5 @@ class UpcomingEventsController extends Controller
         return redirect('/events');
 
     }
+    
 }

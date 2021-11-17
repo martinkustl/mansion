@@ -23,14 +23,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', [HomeController::class, 'index']);
-Route::delete('/home/{id}', [HomeController::class, 'deleteEvent'])->middleware('auth');;
+Route::delete('/home/{id}', [HomeController::class, 'deleteEvent'])->middleware('auth');
 
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
 
 Route::get('/events', [UpcomingEventsController::class, 'index']);
-Route::post('/events', [UpcomingEventsController::class, 'createEvent'])->middleware('auth');;
-Route::delete('/events/{id}', [UpcomingEventsController::class, 'deleteEvent'])->middleware('auth');;
+Route::post('/events', [UpcomingEventsController::class, 'createEvent'])->middleware('auth');
+Route::delete('/events/{id}', [UpcomingEventsController::class, 'deleteEvent'])->middleware('auth');
 
 Route::get('/reviews', [ReviewsController::class, 'index']);
 Route::post('/reviews', [ReviewsController::class, 'createReview']);
@@ -44,7 +44,8 @@ Route::post('/login', [LoginController::class, 'login']);
 // Detail eventu
 Route::get('/home/{id}', [EventController::class, 'index']);
 Route::get('/events/{id}', [EventController::class, 'index']);
-
+Route::get('/events/{id}/edit', [EventController::class, 'editEventView'])->middleware('auth');
+Route::put('/events/{id}/edit', [EventController::class, 'editEvent'])->middleware('auth');
 
 Route::get('/facilities/{id}', [FacilityController::class, 'index']);
 
