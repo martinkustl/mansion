@@ -67,6 +67,14 @@
     background-color: var(--color-tertiary);
 }
 
+.c-review-answer--footer > input {
+    border: 1px solid var(--color-light);
+}
+
+.c-review-answer--footer > input:hover {
+    border: 1px solid var(--color-light);
+}
+
 @media only screen and (min-width: 768px) {
     .rating-view > span {
         font-size: var(--font-size-medium);

@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class Review extends Component
 {
+    public $id;
     public $name;
     public $review;
     public $rating;
@@ -15,6 +16,7 @@ class Review extends Component
 
     /**
      * Create a new component instance.
+     * @param int $id
      * @param string $name
      * @param string $review
      * @param int $rating
@@ -23,8 +25,9 @@ class Review extends Component
      * @param string|null $answeredAt
      * @return void
      */
-    public function __construct(string $name, string $review, int $rating, string $createdAt, string $answer = null, string $answeredAt = null)
+    public function __construct(string $name, string $review, int $rating, string $createdAt, string $answer = null, string $answeredAt = null, int $id)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->review = $review;
         $this->rating = $rating;
