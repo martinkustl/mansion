@@ -1,4 +1,4 @@
-@extends('layouts.page')
+@extends('layouts.detail')
 
 @section('title')
     404 stránka
