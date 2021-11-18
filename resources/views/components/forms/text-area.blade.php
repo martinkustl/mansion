@@ -6,7 +6,7 @@
     @endif
     <div class="col-12 c-input--div">
         <textarea class="form-control" id="{{$inputId}}" name="{{$inputName}}" rows="5"
-                  placeholder="{{$placeholder}}" {{$attributes}}>{{$inputValue}}</textarea>
+                  placeholder="{{$placeholder}}" {{$attributes}}>{{old($inputName,$inputValue)}}</textarea>
     </div>
 </div>
 @error($inputName)
