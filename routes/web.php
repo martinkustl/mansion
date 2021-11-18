@@ -32,6 +32,8 @@ Route::delete('/events/{id}', [UpcomingEventsController::class, 'deleteEvent'])-
 
 Route::get('/reviews', [ReviewsController::class, 'index']);
 Route::post('/reviews', [ReviewsController::class, 'createReview']);
+Route::put('/reviews/{id}', [ReviewsController::class, 'createReviewAnswer'])->middleware('auth');
+Route::delete('/reviews/{id}', [ReviewsController::class, 'deleteReview'])->middleware('auth');
 
 // Tato cesta musí mít přiřazené jméno, protože v Auth middleware je nastaveno, že
 // pokud uživatel není přihlášení a zkusí provést akci, ke které nemá oprávnění,

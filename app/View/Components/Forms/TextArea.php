@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class TextArea extends Component
 {
     public $labelText;
+    public $showLabel;
     public $inputId;
     public $placeholder;
     public $inputName;
@@ -20,17 +21,19 @@ class TextArea extends Component
      * @param string $placeholder
      * @param string $inputName
      * @param string $inputValue
+     * @param boolean $showLabel
      *
      * @return void
      */
 
-    public function __construct(string $labelText, string $inputId, string $placeholder, string $inputName, string $inputValue = '')
+    public function __construct(string $labelText, string $inputId, string $placeholder, string $inputName, string $inputValue = '', bool $showLabel = true)
     {
         $this->labelText = $labelText;
         $this->inputId = $inputId;
         $this->placeholder = $placeholder;
         $this->inputName = $inputName;
         $this->inputValue = $inputValue;
+        $this->showLabel = $showLabel;
     }
 
     /**

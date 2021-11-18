@@ -11,6 +11,7 @@
 @endsection
 
 <form class="c-review-form p-4" method="POST" action="/reviews">
+    @method('POST')
     @csrf
     <h3 class="c-review-form--heading">Vložte vlastní recenzi</h3>
     <x-forms.input inputType="text" labelText="Jméno" placeholder="Jméno" inputId="name" inputName="name"/>
@@ -52,6 +53,9 @@
         <li>
             <x-review :name="$review->name" :review="$review->review" :rating="$review->rating"
                       :createdAt="format_datetime($review->createdAt)"
+                      :answeredAt="format_datetime($review->answeredAt)"
+                      :answer="$review->answer"
+                      :id="$review->id"
             />
         </li>
     @endforeach
