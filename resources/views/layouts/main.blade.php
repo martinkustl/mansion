@@ -17,6 +17,7 @@
     <link href="/css/variables.css" rel="stylesheet"/>
     <link href="/css/main.css" rel="stylesheet"/>
     <link href="/css/layout/navbar.css" rel="stylesheet"/>
+    <link href="/css/layout/main.css" rel="stylesheet"/>
     <link href="/css/components/card.css" rel="stylesheet"/>
     <link href="/css/components/review.css" rel="stylesheet"/>
     <link href="/css/components/event-list.css" rel="stylesheet"/>
@@ -33,6 +34,14 @@
 @include('layouts.navbar')
 <div id="content-container">
     <main>
+        @auth
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="btn logout--button">
+                    <i class="bi bi-power"></i>
+                </button>
+            </form>
+        @endauth
         @yield('page-content')
         {{-- <h2 class="page-heading">@yield('pageHeading')</h2> --}}
         {{-- @yield('content') --}}

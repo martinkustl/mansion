@@ -21,7 +21,7 @@ body {
     /* height: 100%; */
     display: grid;
     grid-template-rows: auto 2rem;
-    background-color: var(--color--light);
+    background-color: var(--color-light);
     margin-top: 95px;
 }
 
@@ -50,6 +50,20 @@ main {
     border-radius: var(--radius-normal);
     text-align: center;
     margin-bottom: 1rem;
+}
+
+.logout--button {
+    position: fixed;
+    left: 0;
+    top: 30%;
+    z-index: 1;
+    background-color: #C4C4C4;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.logout--button i {
+    font-size: var(--font-size-big);
 }
 
 @media only screen and (min-width: 768px) {

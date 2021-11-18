@@ -40,6 +40,7 @@ Route::delete('/reviews/{id}', [ReviewsController::class, 'deleteReview'])->midd
 // tak bude přesměrován na route se jménem "login"
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 // Detail eventu
 Route::get('/home/{id}', [EventController::class, 'index']);
