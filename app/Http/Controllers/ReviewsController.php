@@ -43,7 +43,7 @@ class ReviewsController extends Controller
         $validatedInputs = $request->validate([
             'answer' => 'required',
         ]);
-        
+
         $reviewId = $request->id;
 
         $review = Review::where('id', $reviewId)->first();
@@ -51,6 +51,15 @@ class ReviewsController extends Controller
         $review->answered_at = Carbon::now();
 
         $review->save();
+
+        return redirect("/reviews");
+    }
+
+    public function deleteReview(Request $request)
+    {
+        $reviewId = $request->id;
+
+        DB::table('review')->where('id', '=', $reviewId)->delete();
 
         return redirect("/reviews");
     }

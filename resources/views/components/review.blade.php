@@ -23,14 +23,64 @@
             <p>
                 {{$review}}
             </p>
+            @auth
+                <div class="d-flex align-items-end justify-content-end review-buttons--wrapper">
+                    @if(!$answer)
+                        <button onclick="onAnswerReviewButtonClick({{$id}})" class="btn border me-2">
+                            <i class="bi bi-reply-fill"></i>
+                        </button>
+                    @endisset
+                    <button
+                        class="btn border"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteReviewModal{{$id}}"
+                    >
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    {{--                           <button type="button"
+                                        @class([
+                                            'btn',
+                                            'border',
+                                            'event-detail--delete-button',
+                                            'flex-grow-1',
+                                            'd-flex',
+                                            'justify-content-center',
+                                            'align-items-center',
+                                            'event-detail--delete-button__alone'=>$isEditable !== true
+                                        ])
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteEventModal{{$eventId}}">
+                                    <i class="bi bi-trash"></i>
+                                </button>--}}
+                    <x-delete-item-modal
+                        modalId="deleteReviewModal{{$id}}"
+                        modalTitleId="deleteReviewModalTitle"
+                        :itemId="$id"
+                        modalHeadingText="Potvrzení smazání hodnocení"
+                        modalText="Opravdu chcete smazat hodnocení od {{$name}}?"
+                        inputName="reviewId"
+                        submitBtnText="Smazat hodnocení"
+                        formActionUrl="/reviews/{{$id}}"
+                    />
+                </div>
+            @endauth
         </div>
     </section>
     @if($answer || Auth::check())
-        <section class="card c-review-card c-review-card--answer ms-4 mt-2">
+        <section id="review-answer-{{$id}}"
+            @class([
+                       'card',
+                       'c-review-card',
+                       'c-review-card--answer',
+                       'ms-4',
+                       'mt-2',
+                       'review--open' => $answer !== null
+                   ])
+        >
             <header class="card-header c-card-header--answer">
                 <div class="row d-flex flex-md-row">
                     <h3 class="card-title col-auto c-review-heading align-self-start mb-2 mb-md-0">
-                        Admin to {{$name}}
+                        Admin pro: {{$name}}
                     </h3>
                     <h4 class="card-subtitle c-review-date__answer col align-self-center text-md-end font-weight-bold">
                         {{ $answeredAt }}
@@ -45,6 +95,7 @@
                                        inputId="answer"
                                        inputName="answer"
                                        inputValue="{{$answer}}"
+                                       required
                     />
                 @endauth
                 @guest
