@@ -53,6 +53,25 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Domovská stránka */
+.home-page--welcome-text {
+    text-align: center;
+    font-size: var(--font-size-normal);
+}
+
+.home-page--sub-heading {
+    font-size: var(--font-size-medium);
+    text-align: center;
+    font-weight: bold;
+}
+
+.home-hr {
+    border: 1px solid var(--color-primary);
+    opacity: 1;
+    margin: 0 auto;
+    width: 50%;
+}
+
 /* EVENT DETAIL*/
 
 .event-detail--image {
@@ -411,6 +430,14 @@ h4 {
 
     #content-container {
         margin-top: 263px;
+    }
+
+    .home-page--welcome-text {
+        font-size: var(--font-size-medium);
+    }
+
+    .home-page--sub-heading {
+        font-size: var(--font-size-big);
     }
 
     .c-review-form--submit {
