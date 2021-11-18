@@ -37,21 +37,6 @@
                     >
                         <i class="bi bi-trash"></i>
                     </button>
-                    {{--                           <button type="button"
-                                        @class([
-                                            'btn',
-                                            'border',
-                                            'event-detail--delete-button',
-                                            'flex-grow-1',
-                                            'd-flex',
-                                            'justify-content-center',
-                                            'align-items-center',
-                                            'event-detail--delete-button__alone'=>$isEditable !== true
-                                        ])
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#deleteEventModal{{$eventId}}">
-                                    <i class="bi bi-trash"></i>
-                                </button>--}}
                     <x-delete-item-modal
                         modalId="deleteReviewModal{{$id}}"
                         modalTitleId="deleteReviewModalTitle"
