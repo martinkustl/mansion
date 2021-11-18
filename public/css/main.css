@@ -12,9 +12,7 @@ html {
 }
 
 body {
-    /* font-family: "Montserrat", sans-serif; */
     display: grid;
-    /* grid-template-rows: fit-content(30rem) auto; */
     height: 100%;
 }
 
