@@ -11,10 +11,10 @@ class ReviewsController extends Controller
     public function index()
     {
         $reviews = DB::table('review')
-            ->select('review.name', 'review.review', 'review.rating', 'review.created_at as createdAt')
+            ->select('review.name', 'review.review', 'review.rating', 'review.created_at as createdAt', 'review.answered_at as answeredAt', 'review.answer')
             ->orderBy('createdAt', 'desc')
             ->get();
-        
+
         return view('reviews.reviews', ['reviews' => $reviews]);
     }
 

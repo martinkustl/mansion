@@ -3,10 +3,29 @@
     border-radius: var(--radius-normal);
 }
 
+.c-review-card--answer {
+    background-color: var(--color-primary);
+}
+
+.c-review-card--answer * {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+
+}
+
+.c-review-date__answer {
+    color: var(--color-light);
+    font-size: var(--font-size-normal);
+    font-weight: normal;
+}
+
 .c-review-heading {
     font-size: var(--font-size-medium);
     font-weight: bold;
+}
 
+.c-card-header--answer {
+    border-bottom: 1px solid var(--color-secondary);
 }
 
 .c-review-date {
@@ -45,7 +64,6 @@
 }
 
 .c-review-body {
-    padding-left: 3rem;
     background-color: var(--color-tertiary);
 }
 

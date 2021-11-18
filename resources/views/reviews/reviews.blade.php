@@ -52,6 +52,8 @@
         <li>
             <x-review :name="$review->name" :review="$review->review" :rating="$review->rating"
                       :createdAt="format_datetime($review->createdAt)"
+                      :answeredAt="format_datetime($review->answeredAt)"
+                      :answer="$review->answer"
             />
         </li>
     @endforeach
