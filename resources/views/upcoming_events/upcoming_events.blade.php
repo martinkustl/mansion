@@ -53,14 +53,15 @@
         @csrf
         <div class="row">
             <div class="col-md-4 mb-3 mb-md-0">
-                <label id="eventImageLabel" for="eventImage" class="w-100 h-100"
-                       style="cursor: pointer; border: 1px dashed black; display: flex; align-items: center; justify-content: center; position: relative; min-height: 200px">
+                <label id="eventImageLabel" for="eventImage"
+                       class="w-100 h-100 event-image--label">
                 <span>
                     Nahrajte obrázek akce
                 </span>
+                    <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
+                           class="image-upload--input"
+                           required>
                 </label>
-                <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
-                       style="position: absolute; opacity:0; z-index: -1; width: 0;" required>
 
                 @error("eventImage")
                 <div class="alert alert-danger">{{ $message }}</div>

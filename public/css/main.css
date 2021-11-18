@@ -194,7 +194,9 @@ h4 {
 
 .rating input {
     position: absolute;
-    left: -999999px;
+    /*left: -999999px;*/
+    opacity: 0;
+
 }
 
 .rating label {
@@ -295,6 +297,25 @@ h4 {
 
 .c-new-event--form {
     padding: 1rem;
+}
+
+.image-upload--input {
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    left: 50%;
+    /*z-index: -1;*/
+    width: 1px;
+}
+
+.event-image--label {
+    cursor: pointer;
+    border: 1px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 200px
 }
 
 
