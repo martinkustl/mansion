@@ -41,27 +41,16 @@
                     data-bs-target="#deleteEventModal{{$eventId}}">
                 <i class="bi bi-trash"></i>
             </button>
-            <x-centered-modal id="deleteEventModal{{$eventId}}" labeledBy="deleteEventModalTitle">
-                <div class="modal-header d-flex justify-content-center">
-                    <h3 class="modal-title text-center" id="deleteEventModalTitle">Potvrzení smazání akce</h3>
-                </div>
-                <form method="POST" action="/{{$basePath}}/{{$eventId}}">
-                    @csrf
-                    {{-- HTML formulář akceptuje pouze POST/GET, pro použití jiných metod je potřeba využít--}}
-                    {{-- laravel funkci method--}}
-                    @method('DELETE')
-                    <div class="modal-body">
-                        <p>Opravdu chcete smazat událost {{$title}}?</p>
-                        <input value="{{$eventId}}" name="eventId" type="hidden">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Zavřít
-                        </button>
-                        <input type="submit" class="btn btn-primary c-btn-primary" value="Smazat událost">
-                    </div>
-                </form>
-            </x-centered-modal>
+            <x-delete-item-modal
+                modalId="deleteEventModal{{$eventId}}"
+                modalTitleId="deleteEventModalTitle"
+                :itemId="$eventId"
+                modalHeadingText="Potvrzení smazání akce"
+                modalText="Opravdu chcete smazat událost {{$title}}?"
+                inputName="eventId"
+                submitBtnText="Smazat událost"
+                formActionUrl="/{{$basePath}}/{{$eventId}}"
+            />
         </aside>
     @endauth
 </li>
