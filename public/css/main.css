@@ -385,6 +385,25 @@ h4 {
     color: var(--color-primary);
 }
 
+/* 404 page */
+.not-found--heading {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 6rem;
+    font-family: 'Italiana', serif;
+}
+
+.not-found--sub-heading {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Italiana', serif;
+}
+
+.not-found--text {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;
@@ -410,5 +429,10 @@ h4 {
     .events--link {
         width: 130px;
         font-size: 1rem;
+    }
+    
+    .not-found--heading {
+
+        font-size: 8rem;
     }
 }
