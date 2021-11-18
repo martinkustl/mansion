@@ -3,7 +3,6 @@
 @section('title')
     Zařízení
 @endsection
-
 @section('content')
     <article class="event-detail--wrapper">
         <h2 class="detail-page--title">{{$facility->name}}</h2>
