@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-
+    
 @section('pageHeading')
     Prostory a vyžití
 @endsection

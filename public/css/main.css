@@ -12,9 +12,7 @@ html {
 }
 
 body {
-    /* font-family: "Montserrat", sans-serif; */
     display: grid;
-    /* grid-template-rows: fit-content(30rem) auto; */
     height: 100%;
 }
 
@@ -51,6 +49,25 @@ main {
     border-radius: var(--radius-normal);
     text-align: center;
     margin-bottom: 1rem;
+}
+
+/* Domovská stránka */
+.home-page--welcome-text {
+    text-align: center;
+    font-size: var(--font-size-normal);
+}
+
+.home-page--sub-heading {
+    font-size: var(--font-size-medium);
+    text-align: center;
+    font-weight: bold;
+}
+
+.home-hr {
+    border: 1px solid var(--color-primary);
+    opacity: 1;
+    margin: 0 auto;
+    width: 50%;
 }
 
 /* EVENT DETAIL*/
@@ -177,7 +194,9 @@ h4 {
 
 .rating input {
     position: absolute;
-    left: -999999px;
+    /*left: -999999px;*/
+    opacity: 0;
+
 }
 
 .rating label {
@@ -280,6 +299,25 @@ h4 {
     padding: 1rem;
 }
 
+.image-upload--input {
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    left: 50%;
+    /*z-index: -1;*/
+    width: 1px;
+}
+
+.event-image--label {
+    cursor: pointer;
+    border: 1px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 200px
+}
+
 
 /* GLOBAL */
 .modal-content {
@@ -375,6 +413,35 @@ h4 {
     margin-top: 1rem;
 }
 
+.previous-page--link {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: var(--font-size-normal);
+}
+
+.previous-page--link:hover {
+    color: var(--color-primary);
+}
+
+/* 404 page */
+.not-found--heading {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 6rem;
+    font-family: 'Italiana', serif;
+}
+
+.not-found--sub-heading {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Italiana', serif;
+}
+
+.not-found--text {
+    font-size: 1rem;
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
     .page-heading {
         background-color: transparent;
@@ -382,6 +449,14 @@ h4 {
 
     #content-container {
         margin-top: 263px;
+    }
+
+    .home-page--welcome-text {
+        font-size: var(--font-size-medium);
+    }
+
+    .home-page--sub-heading {
+        font-size: var(--font-size-big);
     }
 
     .c-review-form--submit {
@@ -400,5 +475,15 @@ h4 {
     .events--link {
         width: 130px;
         font-size: 1rem;
+    }
+
+    .not-found--heading {
+
+        font-size: 8rem;
+    }
+
+    .not-found--text {
+        font-size: 1.5rem;
+        text-align: center;
     }
 }
