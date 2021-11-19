@@ -58,10 +58,9 @@
                 <span>
                     Nahrajte obrázek akce
                 </span>
-                    <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
-                           class="image-upload--input"
-                           required>
                 </label>
+                <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
+                       class="image-upload--input" required>
 
                 @error("eventImage")
                 <div class="alert alert-danger">{{ $message }}</div>
