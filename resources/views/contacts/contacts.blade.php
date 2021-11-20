@@ -53,6 +53,7 @@
     <div class="c-contacts-map" id="map"></div>
 </address>
 <script>
+    {{--  tvorba Leaflet mapy + vložení markeru ukazující na ČZU PEF  --}}
     const map = L.map('map').setView([50.131057916040376, 14.373234719357779], 18);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

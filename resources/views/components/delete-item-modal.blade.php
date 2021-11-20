@@ -1,4 +1,4 @@
-<x-centered-modal id="{{$modalId}}" labeledBy="{{$modalTitleId}}">
+<x-centered-modal id="{{$modalId}}" labeled-by="{{$modalTitleId}}">
     <div class="modal-header d-flex justify-content-center">
         <h3 class="modal-title text-center" id="{{$modalTitleId}}">{{$modalHeadingText}}</h3>
     </div>

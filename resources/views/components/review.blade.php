@@ -38,14 +38,14 @@
                         <i class="bi bi-trash"></i>
                     </button>
                     <x-delete-item-modal
-                        modalId="deleteReviewModal{{$id}}"
-                        modalTitleId="deleteReviewModalTitle"
-                        :itemId="$id"
-                        modalHeadingText="Potvrzení smazání hodnocení"
-                        modalText="Opravdu chcete smazat hodnocení od {{$name}}?"
-                        inputName="reviewId"
-                        submitBtnText="Smazat hodnocení"
-                        formActionUrl="/reviews/{{$id}}"
+                        modal-id="deleteReviewModal{{$id}}"
+                        modal-title-id="deleteReviewModalTitle"
+                        :item-id="$id"
+                        modal-heading-text="Potvrzení smazání hodnocení"
+                        modal-text="Opravdu chcete smazat hodnocení od {{$name}}?"
+                        input-name="reviewId"
+                        submit-btn-text="Smazat hodnocení"
+                        form-action-url="/reviews/{{$id}}"
                     />
                 </div>
             @endauth
@@ -76,10 +76,10 @@
                 @method('PUT')
                 @csrf
                 @auth
-                    <x-forms.text-area labelText="Odpověď" placeholder="Odpověď na hodnocení"
-                                       inputId="answer"
-                                       inputName="answer"
-                                       inputValue="{{$answer}}"
+                    <x-forms.text-area label-text="Odpověď" placeholder="Odpověď na hodnocení"
+                                       input-id="answer"
+                                       input-name="answer"
+                                       input-value="{{$answer}}"
                                        required
                     />
                 @endauth
@@ -90,7 +90,7 @@
                 @endguest
                 @auth
                     <div class="d-flex align-items-end justify-content-end mt-2 c-review-answer--footer">
-                        <x-forms.submit-button btnText="Odpovědět"/>
+                        <x-forms.submit-button btn-text="Odpovědět"/>
                     </div>
                 @endauth
             </form>

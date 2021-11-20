@@ -42,14 +42,14 @@
                 <i class="bi bi-trash"></i>
             </button>
             <x-delete-item-modal
-                modalId="deleteEventModal{{$eventId}}"
-                modalTitleId="deleteEventModalTitle"
-                :itemId="$eventId"
-                modalHeadingText="Potvrzení smazání akce"
-                modalText="Opravdu chcete smazat událost {{$title}}?"
-                inputName="eventId"
-                submitBtnText="Smazat událost"
-                formActionUrl="/{{$basePath}}/{{$eventId}}"
+                modal-id="deleteEventModal{{$eventId}}"
+                modal-title-id="deleteEventModalTitle"
+                :item-id="$eventId"
+                modal-heading-text="Potvrzení smazání akce"
+                modal-text="Opravdu chcete smazat událost {{$title}}?"
+                input-name="eventId"
+                submit-btn-text="Smazat událost"
+                form-action-url="/{{$basePath}}/{{$eventId}}"
             />
         </aside>
     @endauth

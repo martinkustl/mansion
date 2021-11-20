@@ -14,8 +14,8 @@
     @method('POST')
     @csrf
     <h3 class="c-review-form--heading">Vložte vlastní recenzi</h3>
-    <x-forms.input inputType="text" labelText="Jméno" placeholder="Jméno" inputId="name" inputName="name" required/>
-    <x-forms.text-area labelText="Recenze" placeholder="Recenze" inputId="review" inputName="review" required/>
+    <x-forms.input input-type="text" label-text="Jméno" placeholder="Jméno" input-id="name" input-name="name" required/>
+    <x-forms.text-area label-text="Recenze" placeholder="Recenze" input-id="review" input-name="review" required/>
     <div class="row align-items-center justify-content-between">
         <div class="col-md-6">
             {{--  TODO - zlepšit validaci ratingu - neukáže se error message na clientovi          --}}

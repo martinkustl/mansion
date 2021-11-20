@@ -16,7 +16,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link href="/css/variables.css" rel="stylesheet"/>
-    <link href="/css/main.css" rel="stylesheet"/>
+    <link href="/css/global.css" rel="stylesheet"/>
     <link href="/css/layout/navbar.css" rel="stylesheet"/>
     <link href="/css/layout/main.css" rel="stylesheet"/>
     <link href="/css/components/card.css" rel="stylesheet"/>

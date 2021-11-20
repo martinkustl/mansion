@@ -11,8 +11,9 @@
 @endsection
 <form class="c-login-form" method="POST" action="/login">
     @csrf
-    <x-forms.input inputType="email" labelText="Email" placeholder="Email" inputId="email" inputName="email"/>
-    <x-forms.input inputType="password" labelText="Heslo" placeholder="Heslo" inputId="password" inputName="password"/>
+    <x-forms.input input-type="email" label-text="Email" placeholder="Email" input-id="email" input-name="email"/>
+    <x-forms.input input-type="password" label-text="Heslo" placeholder="Heslo" input-id="password"
+                   input-name="password"/>
     <div class="d-flex mt-4">
         <button type="submit" class="btn btn-primary c-btn-primary" style="margin: auto">Přihlásit se
         </button>

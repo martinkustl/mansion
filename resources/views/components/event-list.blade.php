@@ -2,11 +2,11 @@
     @foreach ($events as $event)
         <x-event-card :title="$event->title" :description="$event->description"
                       :date="format_datetime($event->date)"
-                      :imgPath="$event->folderName.'/'.$event->staticFileId.$event->extension"
-                      :imgName="$event->imgName"
-                      :eventId="$event->id"
-                      :basePath="$basePath"
-                      :isEditable="$isEditable"
+                      :img-path="$event->folderName.'/'.$event->staticFileId.$event->extension"
+                      :img-name="$event->imgName"
+                      :event-id="$event->id"
+                      :base-path="$basePath"
+                      :is-editable="$isEditable"
         />
     @endforeach
     @if(count($events) === 0)
