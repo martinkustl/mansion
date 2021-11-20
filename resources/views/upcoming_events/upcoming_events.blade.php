@@ -52,9 +52,9 @@
           id="new-event-form">
         @csrf
         <div class="row">
-            <div class="col-md-4 mb-3 mb-md-0">
+            <div class="col-md-4 mb-3 mb-md-0 image-upload--wrapper">
                 <label id="eventImageLabel" for="eventImage"
-                       class="w-100 h-100 event-image--label">
+                       class="w-100 h-100 image-upload--label">
                 <span>
                     Nahrajte obrázek akce
                 </span>
@@ -67,8 +67,8 @@
                 @enderror
             </div>
             <div class="col-md-8 c-form--inputs-wrapper">
-                <x-forms.input inputType="text" labelText="Název" placeholder="Název" inputId="title"
-                               inputName="title" required/>
+                <x-forms.input input-type="text" label-text="Název" placeholder="Název" input-id="title"
+                               input-name="title" required/>
                 <label class="w-auto" style="white-space: nowrap; font-size: 1rem; margin-bottom: 0;"
                        for="eventType">Typ akce
                 </label>
@@ -81,16 +81,17 @@
                 @error("eventType")
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <x-forms.input inputType="datetime-local" labelText="Datum" placeholder="Datum ve formátu DD.MM.YYYY"
-                               inputId="date" inputName="date" required/>
-                <x-forms.input inputType="number" labelText="Cena" placeholder="Cena (pouze číslo)" inputId="price"
-                               inputName="price" required/>
-                <x-forms.text-area labelText="Popis" placeholder="Popis" inputId="description" inputName="description"
+                <x-forms.input input-type="datetime-local" label-text="Datum" placeholder="Datum ve formátu DD.MM.YYYY"
+                               input-id="date" input-name="date" required/>
+                <x-forms.input input-type="number" label-text="Cena" placeholder="Cena (pouze číslo)" input-id="price"
+                               input-name="price" required/>
+                <x-forms.text-area label-text="Popis" placeholder="Popis" input-id="description"
+                                   input-name="description"
                                    required/>
             </div>
         </div>
         <div class="d-flex justify-content-end w-100 mt-3">
-            <x-forms.submit-button btnText="Vytvořit"/>
+            <x-forms.submit-button btn-text="Vytvořit"/>
         </div>
     </form>
 @endauth
@@ -98,7 +99,7 @@
 
 
 {{-- Vykreslení eventů --}}
-<x-event-list :events="$events" basePath="events" isEditable="true"/>
+<x-event-list :events="$events" base-path="events" is-editable="true"/>
 <div style="height: 3rem">
     {{ $events->links("") }}
 </div>

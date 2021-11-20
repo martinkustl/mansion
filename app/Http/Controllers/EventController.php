@@ -69,7 +69,7 @@ class EventController extends Controller
             'event_type_id' => $validatedEvent['eventType'],
         ]);
 
-        if ($validatedEvent['eventImage']) {
+        if (array_key_exists('eventImage', $validatedEvent)) {
             $this->staticFileService->updateEventStaticFile($validatedEvent['eventImage'], $eventId);
         }
 

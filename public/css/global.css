@@ -269,6 +269,12 @@ h4 {
 
 /* NADCHÁZEJÍCÍ AKCE    */
 
+.event-type--label {
+    white-space: nowrap;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
 .c-radios-wrapper > * {
     margin-left: 1rem;
 }
@@ -299,6 +305,10 @@ h4 {
     padding: 1rem;
 }
 
+.image-upload--wrapper {
+    position: relative;
+}
+
 .image-upload--input {
     position: absolute;
     opacity: 0;
@@ -308,13 +318,12 @@ h4 {
     width: 1px;
 }
 
-.event-image--label {
+.image-upload--label {
     cursor: pointer;
     border: 1px dashed black;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     min-height: 200px
 }
 

@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    {{--    TODO - přidat tlačítko zpět --}}
     {{--     TODO - přidat hlášku o úspěšné editaci, nebo na stránku eventu hodit tlačítko pro editaci eventu--}}
     <form method="POST" action="/events/{{$event->id}}/edit" enctype="multipart/form-data">
         @method("PUT")
@@ -15,17 +14,15 @@
                 <img class="event-detail--image" src="/images/events/{{$event->staticFileId.$event->extension}}"
                      alt="{{$event->imgName}}"/>
             </label>
-            <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
-                   style="position: absolute; opacity:0; z-index: -1">
+            <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)" class="image-upload--input">
 
             @error("eventImage")
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <x-forms.input inputType="text" labelText="Název" placeholder="Název" inputId="title"
-                       inputName="title" inputValue="{{$event->title}}" required/>
-        <label class="w-auto" style="white-space: nowrap; font-size: 1rem; margin-bottom: 0;"
-               for="eventType">Typ akce
+        <x-forms.input input-type="text" label-text="Název" placeholder="Název" input-id="title"
+                       input-name="title" input-value="{{$event->title}}" required/>
+        <label class="w-auto event-type--label" for="eventType">Typ akce
         </label>
         <select class="form-select w-100" aria-label="multiple select" name="eventType">
             @foreach($eventTypes as $eventType)
@@ -37,24 +34,25 @@
         @error("eventType")
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <x-forms.input inputType="datetime-local" labelText="Datum" placeholder="Datum ve formátu DD.MM.YYYY"
-                       inputId="date"
-                       inputName="date"
+        <x-forms.input input-type="datetime-local" label-text="Datum" placeholder="Datum ve formátu DD.MM.YYYY"
+                       input-id="date"
+                       input-name="date"
                        {{-- datetime-local vyžaduje specifický datetime formát, jinak hodnotu nezobrazí --}}
-                       inputValue="{{date('Y-m-d\TH:i:s', strtotime($event->date))}}"
+                       input-value="{{date('Y-m-d\TH:i:s', strtotime($event->date))}}"
                        required
 
         />
-        <x-forms.input inputType="number" labelText="Cena" placeholder="Cena (pouze číslo)" inputId="price"
-                       inputName="price" inputValue="{{$event->entrance_fee}}" required/>
-        <x-forms.text-area labelText="Popis" placeholder="Popis" inputId="description" inputName="description"
-                           inputValue="{{$event->description}}" required/>
+        <x-forms.input input-type="number" label-text="Cena" placeholder="Cena (pouze číslo)" input-id="price"
+                       input-name="price" :input-value="$event->entrance_fee" required/>
+        <x-forms.text-area label-text="Popis" placeholder="Popis" input-id="description" input-name="description"
+                           :input-value="$event->description" required/>
         <div class="d-flex justify-content-end w-100 mt-3">
-            <a href="/events" type="button" class="btn btn-secondary me-3" data-bs-dismiss="modal">
+            <a href="/events" class="btn btn-secondary me-3">
                 Zrušit změny a vrátit se na seznam
             </a>
-            <x-forms.submit-button btnText="Potvrdit změny"/>
+            <x-forms.submit-button btn-text="Potvrdit změny"/>
         </div>
     </form>
 @endsection
+
 

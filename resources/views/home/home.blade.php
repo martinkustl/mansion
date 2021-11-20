@@ -16,7 +16,7 @@
 <h3 class="home-page--sub-heading mb-4">Podívejte se, co se u nás dělo</h3>
 
 {{-- Vykreslení eventů --}}
-<x-event-list :events="$events" basePath="home"/>
+<x-event-list :events="$events" base-path="home"/>
 
 <a class="events--link" href="/events">
     Více o nadcházejících akcích najdete na tomto odkazu

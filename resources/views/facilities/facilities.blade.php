@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    
+
 @section('pageHeading')
     Prostory a vyžití
 @endsection
@@ -16,8 +16,8 @@
         <li>
             <a class="event-list__link" href="facilities/{{$facility->id}}">
                 <x-facility-card :name="$facility->name" :description="$facility->description"
-                                 :imgPath="$facility->folderName.'/'.$facility->staticFileId.$facility->extension"
-                                 :imgName="$facility->imgName"/>
+                                 :img-path="$facility->folderName.'/'.$facility->staticFileId.$facility->extension"
+                                 :img-name="$facility->imgName"/>
             </a>
         </li>
     @endforeach
