@@ -20,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Stránky pro AB testy
+Route::get('/home-a', [HomeController::class, 'pageA']);
+Route::get('/home-b', [HomeController::class, 'pageB']);
+
+
 Route::get('/home', [HomeController::class, 'index']);
 Route::delete('/home/{id}', [HomeController::class, 'deleteEvent'])->middleware('auth');
 
