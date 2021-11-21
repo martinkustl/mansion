@@ -31,6 +31,34 @@ class HomeController extends Controller
         return view('home.home', ['events' => $events]);
     }
 
+    public function pageA()
+    {
+        // Získá akce, které již proběhly
+        $events = DB::table('event')
+            ->join('static_file', 'event.id', '=', 'static_file.event_id')
+            ->where('date', '<', Carbon::now())
+            ->select('event.*', 'static_file.id as staticFileId', 'static_file.extension', 'static_file.name as imgName', 'static_file.folder_name as folderName')
+            ->orderBy('event.date', 'desc')
+            ->limit(5)
+            ->get();
+
+        return view('testing.home-a', ['events' => $events]);
+    }
+
+    public function pageB()
+    {
+        // Získá akce, které již proběhly
+        $events = DB::table('event')
+            ->join('static_file', 'event.id', '=', 'static_file.event_id')
+            ->where('date', '<', Carbon::now())
+            ->select('event.*', 'static_file.id as staticFileId', 'static_file.extension', 'static_file.name as imgName', 'static_file.folder_name as folderName')
+            ->orderBy('event.date', 'desc')
+            ->limit(5)
+            ->get();
+
+        return view('testing.home-b', ['events' => $events]);
+    }
+
     public function deleteEvent(Request $request)
     {
         $this->eventService->deleteEvent($request);
