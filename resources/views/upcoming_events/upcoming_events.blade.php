@@ -1,5 +1,10 @@
 @extends ('layouts.page')
 
+@section('description')
+    <meta name="description"
+          content="Na Zámečku se koná plno zajímavých akcí. V našem kalendáři akcí najdete pořádné párty, koncerty, či hezká divadla.">
+@endsection
+
 @section('title')
     Akce
 @endsection

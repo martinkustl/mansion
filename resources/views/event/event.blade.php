@@ -1,5 +1,10 @@
 @extends ('layouts.detail')
 
+@section('description')
+    <meta name="description"
+          content="Pročtěte si detailní popis akce, tedy kdy se koná, či kolik stojí vstupné.">
+@endsection
+
 @section('title')
     Detail události
 @endsection

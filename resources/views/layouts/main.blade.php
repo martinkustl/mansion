@@ -58,7 +58,7 @@
 <script src="/js/rating.js"></script>
 <script src="/js/review.js"></script>
 <script src="/js/image-upload.js"></script>
-<script src="/js/new-event"></script>
+<script src="/js/new-event.js"></script>
 </body>
 
 </html>

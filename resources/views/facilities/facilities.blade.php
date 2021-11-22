@@ -1,5 +1,10 @@
 @extends ('layouts.page')
 
+@section('description')
+    <meta name="description"
+          content="Zámeček nabízí ubytování a spolu s ním řadu možností, jak si svůj pobyt užít. Prohlédněte si naše welness, či sportoviště.">
+@endsection
+
 @section('title')
     Zařízení
 @endsection

@@ -1,5 +1,10 @@
 @extends ('layouts.page')
 
+@section('description')
+    <meta name="description"
+          content="Podívejte se na recenze ostatních návštěvníků našeho Zámečku.">
+@endsection
+
 @section('title')
     Recenze
 @endsection

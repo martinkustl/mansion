@@ -1,7 +1,8 @@
 @extends ('layouts.page')
 
 @section('description')
-    <meta name="description" content="">
+    <meta name="description"
+          content="Zámeček nabízí prostory pro svatby, welness, koncerty, divadla, párty, teambuildingy a další. Pojďte se podívat, co se na Zámečku v poslední době dělo.">
 @endsection
 
 @section('title')
