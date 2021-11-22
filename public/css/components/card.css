@@ -84,7 +84,7 @@
 }
 
 .event-detail--delete-button__alone {
-    border-radius: 0 var(--radius-normal) var(--radius-normal) 0;
+    border-radius: 0 var(--radius-normal) var(--radius-normal) 0 !important;
 }
 
 

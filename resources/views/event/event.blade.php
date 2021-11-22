@@ -1,5 +1,10 @@
 @extends ('layouts.detail')
 
+@section('description')
+    <meta name="description"
+          content="Pročtěte si detailní popis akce, tedy kdy se koná, či kolik stojí vstupné.">
+@endsection
+
 @section('title')
     Detail události
 @endsection
@@ -8,7 +13,7 @@
     <meta property="og:url" content="{{url('/')}}/events/{{$event->id}}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="{{$event->name}}"/>
-    <meta property="og:image" content="%PUBLIC_URL%/images/events/{{$event->static_file_id.$event->extension}}"/>
+    <meta property="og:image" content="/images/events/{{$event->static_file_id.$event->extension}}"/>
 @endsection
 
 @section('content')

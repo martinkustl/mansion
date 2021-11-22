@@ -1,5 +1,10 @@
 @extends ('layouts.page')
 
+@section('description')
+    <meta name="description"
+          content="Chcete nás zkontaktovat? Zde naleznete email, číslo, či adresu našeho Zámečku.">
+@endsection
+
 @section('title')
     Kontakty
 @endsection

@@ -1,12 +1,9 @@
 @extends ('layouts.page')
 
-@section('description')
-    <meta name="description" content="">
-@endsection
-
 @section('title')
     Domovská stránka
 @endsection
+
 
 @section('content')
 

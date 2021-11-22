@@ -26,7 +26,8 @@
             @auth
                 <div class="d-flex align-items-end justify-content-end review-buttons--wrapper">
                     @if(!$answer)
-                        <button onclick="onAnswerReviewButtonClick({{$id}})" class="btn border me-2">
+                        <button onclick="onAnswerReviewButtonClick({{$id}})" class="btn border me-2"
+                                aria-label="Odpovědět">
                             <i class="bi bi-reply-fill"></i>
                         </button>
                     @endisset
@@ -34,6 +35,7 @@
                         class="btn border"
                         data-bs-toggle="modal"
                         data-bs-target="#deleteReviewModal{{$id}}"
+                        aria-label="Smazat recenzi"
                     >
                         <i class="bi bi-trash"></i>
                     </button>
@@ -77,7 +79,7 @@
                 @csrf
                 @auth
                     <x-forms.text-area label-text="Odpověď" placeholder="Odpověď na hodnocení"
-                                       input-id="answer"
+                                       input-id="answer-{{$id}}"
                                        input-name="answer"
                                        input-value="{{$answer}}"
                                        required

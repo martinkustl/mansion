@@ -1,5 +1,10 @@
 @extends ('layouts.detail')
 
+@section('description')
+    <meta name="description"
+          content="Pročtěte si popis našeho zařízení a nezapomeňte si prohlédnout také fotky.">
+@endsection
+
 @section('title')
     Zařízení
 @endsection

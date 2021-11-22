@@ -21,7 +21,8 @@
         <aside class="d-flex flex-md-column card--aside">
             @if($isEditable === true)
                 <a href="{{$basePath}}/{{$eventId}}/edit"
-                   class="event-detail--edit-link flex-grow-1 d-flex justify-content-center align-items-center">
+                   class="event-detail--edit-link flex-grow-1 d-flex justify-content-center align-items-center"
+                   aria-label="Editovat akci">
                     <i class="bi bi-pencil"></i>
                 </a>
         @endif
@@ -38,7 +39,9 @@
                         'event-detail--delete-button__alone'=>$isEditable !== true
                     ])
                     data-bs-toggle="modal"
-                    data-bs-target="#deleteEventModal{{$eventId}}">
+                    data-bs-target="#deleteEventModal{{$eventId}}"
+                    aria-label="Smazat akci"
+            >
                 <i class="bi bi-trash"></i>
             </button>
             <x-delete-item-modal

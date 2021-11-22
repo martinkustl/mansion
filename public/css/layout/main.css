@@ -44,6 +44,14 @@ main {
     background-color: var(--color-tertiary);
 }
 
+/*.page-heading {
+    background-color: var(--color-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-normal);
+    text-align: center;
+    margin-bottom: 1rem;
+}*/
+
 .page-heading {
     background-color: var(--color-secondary);
     padding: 1rem;
@@ -69,7 +77,8 @@ main {
 
 @media only screen and (min-width: 768px) {
     .page-heading {
-        display: none;
+        /*display: none;*/
+        background-color: transparent;
     }
 
     #content-container {

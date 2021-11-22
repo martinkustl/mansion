@@ -40,7 +40,7 @@
         @auth
             <form method="POST" action="/logout">
                 @csrf
-                <button type="submit" class="btn logout--button">
+                <button type="submit" class="btn logout--button" aria-label="smazat akci">
                     <i class="bi bi-power"></i>
                 </button>
             </form>
@@ -56,8 +56,9 @@
         crossorigin="anonymous"></script>
 <script src="/js/navbar.js"></script>
 <script src="/js/rating.js"></script>
-<script src="/js/image-upload.js"></script>
 <script src="/js/review.js"></script>
+<script src="/js/image-upload.js"></script>
+<script src="/js/new-event.js"></script>
 </body>
 
 </html>
