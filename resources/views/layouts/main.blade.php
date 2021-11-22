@@ -40,7 +40,7 @@
         @auth
             <form method="POST" action="/logout">
                 @csrf
-                <button type="submit" class="btn logout--button">
+                <button type="submit" class="btn logout--button" aria-label="smazat akci">
                     <i class="bi bi-power"></i>
                 </button>
             </form>

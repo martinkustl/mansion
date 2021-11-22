@@ -43,14 +43,6 @@ main {
     background-color: var(--color-tertiary);
 }
 
-.page-heading {
-    background-color: var(--color-secondary);
-    padding: 1rem;
-    border-radius: var(--radius-normal);
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
 /* Domovská stránka */
 .home-page--welcome-text {
     text-align: center;
@@ -464,10 +456,6 @@ h4 {
 }
 
 @media only screen and (min-width: 768px) {
-    .page-heading {
-        background-color: transparent;
-    }
-
     #content-container {
         margin-top: 263px;
     }

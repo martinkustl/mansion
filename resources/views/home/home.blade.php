@@ -18,7 +18,7 @@
     Vítejne na stránkách Záměčku, kde se pořádají zajímavé společenské akce.
 </p>
 <hr class="home-hr mt-5 mb-5"/>
-<h2 class="home-page--sub-heading mb-4">Podívejte se, co se u nás dělo</h2>
+<h3 class="home-page--sub-heading mb-4">Podívejte se, co se u nás dělo</h3>
 
 <div class="d-flex align-items-center justify-content-center">
     <a class="events--link mb-4 p-2" href="/events">
