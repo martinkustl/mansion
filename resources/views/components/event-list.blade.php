@@ -10,7 +10,7 @@
         />
     @endforeach
     @if(count($events) === 0)
-        <p class="text-center mt-4 p-4 c-no-events">
+        <p class="text-center mt-4 p-4 c-no-data">
             <strong>
                 Žádné akce k zobrazení
             </strong>

@@ -8,7 +8,7 @@
     color: var(--color-dark);
 }
 
-.c-no-events {
+.c-no-data {
     background-color: var(--color-tertiary);
     border-radius: var(--radius-normal);
 }

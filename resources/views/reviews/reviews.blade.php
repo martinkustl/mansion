@@ -65,6 +65,13 @@
         </li>
     @endforeach
 </ul>
+@if(count($reviews) === 0)
+    <p class="text-center mt-4 p-4 c-no-events">
+        <strong>
+            Žádná hodnocení k zobrazení
+        </strong>
+    </p>
+@endif
 
 
 @endsection
