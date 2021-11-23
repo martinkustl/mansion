@@ -13,6 +13,9 @@ class FacilityController extends Controller
             ->where('facility.id', '=', $request->id)
             ->first();
 
+        // Pokud zařízení není nalezeno, tak aplikace hodí 404
+        if (!$facility) abort(404);
+
         $facility->images = $this->getAllFacilityImages($facility->id);
 
         return view("facility.facility", ['facility' => $facility]);

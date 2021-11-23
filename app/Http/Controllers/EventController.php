@@ -25,6 +25,10 @@ class EventController extends Controller
             ->select('event.*', 'static_file.id as static_file_id', 'static_file.extension', 'static_file.name')
             ->first();
 
+
+        // Pokud event není nalezen, tak aplikace hodí 404
+        if (!$event) abort(404);
+
         return view("event.event", ['event' => $event]);
     }
 
