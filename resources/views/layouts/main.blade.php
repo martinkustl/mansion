@@ -9,7 +9,7 @@
 @yield('description')
 @yield('opengraph')
 <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D80H7P6H3T"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-213772451-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -19,8 +19,9 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'G-D80H7P6H3T');
+        gtag('config', 'UA-213772451-1');
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
