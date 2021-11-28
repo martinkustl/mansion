@@ -12,8 +12,8 @@
 @section('opengraph')
     <meta property="og:url" content="{{url('/')}}/events/{{$event->id}}"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="{{$event->name}}"/>
-    <meta property="og:image" content="/images/events/{{$event->static_file_id.$event->extension}}"/>
+    <meta property="og:title" content="{{$event->title}}"/>
+    <meta property="og:image" content="{{url('/')}}/images/events/{{$event->static_file_id.$event->extension}}"/>
 @endsection
 
 @section('content')
