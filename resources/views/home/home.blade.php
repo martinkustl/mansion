@@ -24,7 +24,7 @@
 <h3 class="home-page--sub-heading mb-4">Podívejte se, co se u nás dělo</h3>
 
 <div class="d-flex align-items-center justify-content-center">
-    <a class="events--link mb-4 p-2" href="/events">
+    <a class="events--link mb-4 p-2" id="upcoming-events-link" href="/events">
         Více o nadcházejících akcích najdete na tomto odkazu
     </a>
 </div>
