@@ -77,6 +77,6 @@ class EventController extends Controller
             $this->staticFileService->updateEventStaticFile($validatedEvent['eventImage'], $eventId);
         }
 
-        return redirect('/events/' . $eventId . '/edit');
+        return redirect(url("/events/$eventId/edit"));
     }
 }

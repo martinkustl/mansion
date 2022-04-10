@@ -2,7 +2,7 @@
     <div class="row g-0">
         <div class="col-md-4">
             <img
-                src="/images/{{ $imgPath }}"
+                src="{{asset("/images/$imgPath")}}"
                 class="img-fluid rounded-start c-card-image"
                 alt="{{ $imgName }}"
             />

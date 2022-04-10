@@ -74,7 +74,7 @@
                     </h4>
                 </div>
             </header>
-            <form class="card-body ps-4" method="POST" action="/reviews/{{$id}}">
+            <form class="card-body ps-4" method="POST" action="{{url("/reviews/$id")}}">
                 @method('PUT')
                 @csrf
                 @auth

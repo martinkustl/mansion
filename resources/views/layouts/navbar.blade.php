@@ -1,10 +1,10 @@
 <header class="main-header">
     <nav class="main-nav">
         <div class="mobile-navbar-controls-wrapper" id="app-logo-wrapper">
-            <a class="main-nav__heading-link" href="/">
+            <a class="main-nav__heading-link" href="{{url('/')}}">
                 <img
                     class="main-nav__logo"
-                    src="/images/app-logo.png"
+                    src="{{asset('/images/app-logo.png')}}"
                     alt="zámeček"
                 />
                 <h1 class="main-nav__heading">Zámeček</h1>
@@ -22,35 +22,35 @@
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('home*') ? 'main-nav__link--active' : '')}}"
-                    href="/"
+                    href="{{url('/')}}"
                 >Domů</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('events*') ? 'main-nav__link--active' : '')}}"
-                    href="/events"
+                    href="{{url('/events')}}"
                 >Akce</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('facilities*') ? 'main-nav__link--active' : '')}}"
-                    href="/facilities"
+                    href="{{url('/facilities')}}"
                 >Zařízení</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('reviews*') ? 'main-nav__link--active' : '')}}"
-                    href="/reviews"
+                    href="{{url('/reviews')}}"
                 >Recenze</a
                 >
             </li>
             <li class="main-nav__item">
                 <a
                     class="main-nav__link {{(request()->is('contacts*') ? 'main-nav__link--active' : '')}}"
-                    href="/contacts"
+                    href="{{url('/contacts')}}"
                 >Kontakty</a
                 >
             </li>

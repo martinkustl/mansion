@@ -29,7 +29,7 @@
     </button>
 </div>
 <x-centered-modal id="filterModal" labeledBy="filterModalTitle">
-    <form class="modal-content" method="GET" action="/events">
+    <form class="modal-content" method="GET" action="{{url("/events")}}">
         @csrf
         <div class="modal-header d-flex justify-content-center">
             <h3 class="modal-title text-center" id="filterModalTitle">Filtr dle typu akce</h3>
@@ -53,7 +53,7 @@
 </x-centered-modal>
 
 @auth
-    <form class="c-form c-new-event--form mb-3" action="/events" method="POST" enctype="multipart/form-data"
+    <form class="c-form c-new-event--form mb-3" action="{{url("/events")}}" method="POST" enctype="multipart/form-data"
           id="new-event-form">
         @csrf
         <div class="row">

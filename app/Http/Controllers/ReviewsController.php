@@ -35,7 +35,7 @@ class ReviewsController extends Controller
 
         $review->save();
 
-        return redirect("/reviews");
+        return redirect(url("/reviews"));
     }
 
     public function createReviewAnswer(Request $request)
@@ -52,7 +52,7 @@ class ReviewsController extends Controller
 
         $review->save();
 
-        return redirect("/reviews");
+        return redirect(url("/reviews"));
     }
 
     public function deleteReview(Request $request)
@@ -61,6 +61,6 @@ class ReviewsController extends Controller
 
         DB::table('review')->where('id', '=', $reviewId)->delete();
 
-        return redirect("/reviews");
+        return redirect(url("/reviews"));
     }
 }

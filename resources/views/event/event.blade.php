@@ -14,7 +14,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="{{$event->title}}"/>
     <meta property="og:description" content="Prohlédněte si událost, která se bude odehrávat na Zámečku."/>
-    <meta property="og:image" content="/images/events/{{$event->static_file_id.$event->extension}}"/>
+    <meta property="og:image" content="{{asset("/images/events/$event->static_file_id$event->extension")}}"/>
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
         </h3>
         <h3 class="event-detail--price">{{$event->entrance_fee}} Kč</h3>
 
-        <img src="/images/events/{{$event->static_file_id.$event->extension}}" class="event-detail--image"
+        <img src="{{asset("/images/events/$event->static_file_id$event->extension")}}" class="event-detail--image"
              alt="{{$event->name}}">
         {{-- <p>{{!! nl2br($event->description) !!}}</p> --}}
 

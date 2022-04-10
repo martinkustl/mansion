@@ -19,7 +19,7 @@
     @foreach ($facilities as $facility)
         {{-- Cesta k obrázku je tvořena jako /folderName/id obrázku.extension --}}
         <li>
-            <a class="event-list__link" href="facilities/{{$facility->id}}">
+            <a class="event-list__link" href="{{url("/facilities/$facility->id")}}">
                 <x-facility-card :name="$facility->name" :description="$facility->description"
                                  :img-path="$facility->folderName.'/'.$facility->staticFileId.$facility->extension"
                                  :img-name="$facility->imgName"/>

@@ -77,14 +77,14 @@ class UpcomingEventsController extends Controller
         // Uložení obrázku do DB, včetně přiřazení k eventu z předchozího kroku
         $this->staticFileService->createEventStaticFile($validatedEvent['eventImage'], $event->id);
 
-        return redirect('/events');
+        return redirect(url('/events'));
     }
 
     public function deleteEvent(Request $request)
     {
         $this->eventService->deleteEvent($request);
 
-        return redirect('/events');
+        return redirect(url('/events'));
 
     }
 

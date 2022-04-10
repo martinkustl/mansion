@@ -15,7 +15,7 @@
     Říkají o nás
 @endsection
 
-<form class="c-review-form p-4" method="POST" action="/reviews">
+<form class="c-review-form p-4" method="POST" action="{{url("/reviews")}}">
     @method('POST')
     @csrf
     <h3 class="c-review-form--heading">Vložte vlastní recenzi</h3>
@@ -23,7 +23,6 @@
     <x-forms.text-area label-text="Recenze" placeholder="Recenze" input-id="review" input-name="review" required/>
     <div class="row align-items-center justify-content-between">
         <div class="col-md-6">
-            {{--  TODO - zlepšit validaci ratingu - neukáže se error message na clientovi          --}}
             <div class="rating">
                 <label>
                     <input class="rating-input" type="radio" name="rating" value="5" title="5 stars" required> 5

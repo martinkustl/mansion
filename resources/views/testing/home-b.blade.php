@@ -25,7 +25,7 @@
 {{-- Vykreslení eventů --}}
 <x-event-list :events="$events" base-path="home"/>
 
-<a class="events--link-b" href="/events">
+<a class="events--link-b" href="{{url("/events")}}">
     Více o nadcházejících akcích najdete na tomto odkazu
 </a>
 

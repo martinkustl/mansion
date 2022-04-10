@@ -34,7 +34,7 @@
                         ])
                     >
                         <img class="d-block w-100 c-carousel-img" alt="{{$image->imgName}}"
-                             src="/images/{{$image->folderName.'/'.$image->staticFileId.$image->extension}}"/>
+                             src="{{asset("/images/$image->folderName/$image->staticFileId$image->extension")}}"/>
                     </li>
                 @endforeach
             </ul>

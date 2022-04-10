@@ -9,7 +9,7 @@
 @section('pageHeading')
     Přihlášení do administrace
 @endsection
-<form class="c-login-form" method="POST" action="/login">
+<form class="c-login-form" method="POST" action="{{url("/login")}}">
     @csrf
     <x-forms.input input-type="email" label-text="Email" placeholder="Email" input-id="email" input-name="email"/>
     <x-forms.input input-type="password" label-text="Heslo" placeholder="Heslo" input-id="password"

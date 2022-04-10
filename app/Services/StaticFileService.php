@@ -25,7 +25,7 @@ class StaticFileService
         // to znamená, že cokoliv je ve storage složce, se v aplikací objeví i v public složce
         // nicméně od začátku byly obrázky ukádány přímo do složky public, a tak z důvodu konzitentního chování
         // byl zvolen tento přístup
-        $eventImage->move(public_path() . '/images/events', $staticFile->id . '' . $staticFile->extension);
+        $eventImage->move(base_path() . '/images/events', $staticFile->id . '' . $staticFile->extension);
     }
 
     private function saveStaticFile($staticFile, $eventImage, int $eventId): StaticFile

@@ -36,7 +36,7 @@ class LoginController extends Controller
         if (Auth::attempt($validatedCredentials)) {
             $request->session()->regenerate();
 
-            return redirect('/');
+            return redirect(url('/'));
         }
 
         return back()->withErrors([
@@ -52,7 +52,7 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect(url('/'));
     }
 
 }

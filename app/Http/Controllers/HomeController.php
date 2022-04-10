@@ -63,7 +63,7 @@ class HomeController extends Controller
     {
         $this->eventService->deleteEvent($request);
 
-        return redirect('/');
+        return redirect(url("/"));
 
     }
 }

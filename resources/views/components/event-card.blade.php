@@ -3,7 +3,7 @@
         <article class="card c-card">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="/images/{{$imgPath}}" class="img-fluid rounded-start c-card-image" alt="{{$imgName}}">
+                    <img src="{{asset("/images/$imgPath")}}" class="img-fluid rounded-start c-card-image" alt="{{$imgName}}">
                 </div>
                 <div class="col-md-8 card-body d-flex flex-column">
                     <div>
@@ -20,7 +20,7 @@
     @auth
         <aside class="d-flex flex-md-column card--aside">
             @if($isEditable === true)
-                <a href="{{$basePath}}/{{$eventId}}/edit"
+                <a href="{{url("$basePath/$eventId/edit")}}"
                    class="event-detail--edit-link flex-grow-1 d-flex justify-content-center align-items-center"
                    aria-label="Editovat akci">
                     <i class="bi bi-pencil"></i>

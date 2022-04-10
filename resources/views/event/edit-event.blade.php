@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-    <form method="POST" action="/events/{{$event->id}}/edit" enctype="multipart/form-data">
+    <form method="POST" action={{url("/events/{$event->id}/edit")}} enctype="multipart/form-data">
         @method("PUT")
         @csrf
         <div class="edit-event--uploaded-image">
             <label id="eventImageLabel" for="eventImage" class="w-100 h-100">
-                <img class="event-detail--image" src="/images/events/{{$event->staticFileId.$event->extension}}"
+                <img class="event-detail--image" src={{asset("/images/events/{$event->staticFileId}{$event->extension}")}}
                      alt="{{$event->imgName}}"/>
             </label>
             <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)" class="image-upload--input">
@@ -46,7 +46,7 @@
         <x-forms.text-area label-text="Popis" placeholder="Popis" input-id="description" input-name="description"
                            :input-value="$event->description" required/>
         <div class="d-flex justify-content-end w-100 mt-3">
-            <a href="/events" class="btn btn-secondary me-3">
+            <a href="{{url('/events')}}" class="btn btn-secondary me-3">
                 Zrušit změny a vrátit se na seznam
             </a>
             <x-forms.submit-button btn-text="Potvrdit změny"/>

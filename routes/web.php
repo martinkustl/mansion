@@ -57,5 +57,5 @@ Route::get('/facilities/{id}', [FacilityController::class, 'index']);
 
 
 Route::get("/", function () {
-    return redirect("/home");
+    return redirect(url("/home"));
 });

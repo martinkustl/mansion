@@ -2,7 +2,7 @@
     <div class="modal-header d-flex justify-content-center">
         <h3 class="modal-title text-center" id="{{$modalTitleId}}">{{$modalHeadingText}}</h3>
     </div>
-    <form method="POST" action="{{$formActionUrl}}">
+    <form method="POST" action="{{url($formActionUrl)}}">
         @csrf
         @method('DELETE')
         <div class="modal-body">
