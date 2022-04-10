@@ -109,18 +109,4 @@
     {{ $events->links("") }}
 </div>
 
-
-{{-- TODO - RESET FORM?? --}}
-{{--<script>--}}
-{{--    function resetForm() {--}}
-{{--        const form = document.querySelector("#new-event-form");--}}
-{{--        form.reset();--}}
-{{--        const inputLabel = document.querySelector('#eventImageLabel')--}}
-{{--        inputLabel.innerHTML = ''--}}
-{{--        inputLabel.insertAdjacentHTML('afterbegin', `--}}
-{{--            <span>Nahrajte obrázek akce</span>--}}
-{{--        `)--}}
-{{--    }--}}
-{{--</script>--}}
-
 @endsection

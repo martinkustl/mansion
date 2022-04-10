@@ -2,6 +2,8 @@
 
 namespace App\View\Components;
 
+use Closure;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class EventCard extends Component
@@ -28,7 +30,8 @@ class EventCard extends Component
      * @param bool $isEditable
      *
      */
-    public function __construct(string $title, string $description, string $date, string $imgPath, string $imgName, int $eventId, string $basePath, bool $isEditable = false)
+    public function __construct(
+        string $title, string $description, string $date, string $imgPath, string $imgName, int $eventId, string $basePath, bool $isEditable = false)
     {
         $this->title = $title;
         $this->description = $description;
@@ -43,7 +46,7 @@ class EventCard extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View|Closure|string
      */
     public function render()
     {

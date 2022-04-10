@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    {{--     TODO - přidat hlášku o úspěšné editaci, nebo na stránku eventu hodit tlačítko pro editaci eventu--}}
     <form method="POST" action="/events/{{$event->id}}/edit" enctype="multipart/form-data">
         @method("PUT")
         @csrf
