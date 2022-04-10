@@ -61,7 +61,7 @@
                 <label id="eventImageLabel" for="eventImage"
                        class="w-100 h-100 image-upload--label">
                 <span>
-                    Nahrajte obrázek akce
+                    Nahrajte obrázek akce (Max 5MB)
                 </span>
                 </label>
                 <input type="file" name="eventImage" id="eventImage" onchange="readInput(this)"
